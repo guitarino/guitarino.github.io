@@ -29,12 +29,17 @@ var RouterAnchor = function() {
                 if (this.status === 404) {
                     xhr.onerror();
                 }
-                var new_document = this.responseXML;
-                diff(document, new_document);
-                if(callback) {
-                    callback();
+                try {
+                    var new_document = this.responseXML;
+                    diff(document, new_document);
+                    if(callback) {
+                        callback();
+                    }
+                    currentHref = href;
                 }
-                currentHref = href;
+                catch(oops) {
+                    xhr.onerror();
+                }
             };
             xhr.onerror = function() {
                 console.error('Location is wrong');

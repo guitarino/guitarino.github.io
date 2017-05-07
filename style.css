@@ -16,6 +16,8 @@ body {
     text-align: center;
 	background: #FFFFFF;
     font-family: 'Pridi', serif;
+    position: relative;
+    min-height: 100vh;
 }
 
 a {
@@ -175,10 +177,6 @@ body {
     margin-right: auto;
 }
 
-.top-wrapper {
-    min-height: 100vh;
-}
-
 .content h1,
 .content h2,
 .content h3,
@@ -310,11 +308,32 @@ body {
     }
 }
 
+.footer,
+.footer-spacer {
+    display: block;
+    height: 60px;
+    width: 100%;
+}
+
 .footer {
+    position: absolute;
+    bottom: 0px;
+
     background: #383548;
     color: #FFFFFF;
-    padding: 20px;
-    margin-top: 30px;
+}
+
+.footer::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.footer > * {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
 }
 
 .content a {

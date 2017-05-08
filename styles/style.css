@@ -278,7 +278,7 @@ body {
     margin-top: -20px;
     width: 40px;
     height: 40px;
-    background-image: url('images/external-profiles.png');
+    background-image: url('/images/external-profiles.png');
     background-size: 40px 200px;
 }
 

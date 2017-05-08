@@ -237,12 +237,12 @@ instance.parent_test(); <span class="hljs-comment">// `100` logged, as expected<
 </code></pre>
 <p>Pretty much the only difference from the previous code snippet is that we replaced <code>this._</code> for both child and parent classes with <code>this[priv]</code>, where <code>priv</code> is namespaced and randomly generated to ensure that private access function is stored under a different property name for child and parent.</p>
 <p>Another recommendation I can make is that you should probably secure <code>this[priv]</code> by making it non-configurable, non-enumerable and read-only:</p>
-<pre class="hljs"><code>    <span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-keyword">this</span>, priv, {
-        <span class="hljs-attr">value</span>: private(key)
-    })
+<pre class="hljs"><code><span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-keyword">this</span>, priv, {
+    <span class="hljs-attr">value</span>: private(key)
+})
 </code></pre>
 <p>Instead of just</p>
-<pre class="hljs"><code>    <span class="hljs-keyword">this</span>[priv] = private(key)
+<pre class="hljs"><code><span class="hljs-keyword">this</span>[priv] = private(key)
 </code></pre>
 <p>This will make sure that user will not be able to remove or modify <code>this[priv]</code>, which is crucial for correct private storage functioning.</p>
 <h2>Conclusion</h2>

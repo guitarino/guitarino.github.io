@@ -552,6 +552,7 @@ img.withBorder {
     display: inline;
     padding: 0px 4px 0px 4px;
     border-radius: 2px;
+    word-wrap: break-word;
 }
 
 .content > pre {

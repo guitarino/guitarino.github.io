@@ -96,9 +96,9 @@ Disadvantage of this method:
 
 * It slightly pollutes the namespace, because you have to assign the private storage to `this._` or alike, but there's probably no other way to do this.
 
-## The problem
+## A problem
 
-The problem with this method is that, in case of prototypal inheritance, if both child and parent use the same property name for the private access function (in this example, `this._`), then the parent's private properties cannot be accessed within parent's prototype, because `this._` will refer to child's private access function. Here's what I mean,
+A minor problem with this method is that, in case of prototypal inheritance, if both child and parent use the same property name for the private access function (in this example, `this._`), then the parent's private properties cannot be accessed within parent's prototype, because `this._` will refer to child's private access function. Here's what I mean,
 
 ```javascript
 // Note: this Gist is to show a problem with accessor pattern
@@ -146,24 +146,22 @@ instance.test(); // `200` is correctly logged
 instance.parent_test(); // ERROR! (expected result: `100`)
 ```
 
-When `instance.parent_test` is called, `this._` inside it will refer to the child's private access function, hence, the `key` will mismatch and the error will be logged. However, this problem can be quite easily solved if we slightly modify `private` function and add a case for prototypal inheritance.
+When `instance.parent_test` is called, `this._` inside it will refer to the child's private access function, hence, the `key` will mismatch and the error will be logged. However, this problem can be quite easily solved.
 
-## The solution
+## The final solution
 
-The final solution for creating private properties usable from prototype and allowing inheritance is as follows:
+The best solution is to namespace and make sure that parent and child have different property names for their private access functions. Here's the final solution:
 
 ```javascript
 /* Here's how you can create truly private
    properties in JS and use them on prototype */
 
 // Creates private storage, secures with a key, and
-// returns a private access function. Allows for inheritance
-// if `parent` private access function is provided
-var private = function(key, parent) {
+// returns a private access function
+var private = function(key) {
     var obj = {};
     return function(testkey) {
         if(key === testkey) return obj;
-        if(parent) return parent(testkey);
         console.error('Cannot access private properties');
         return undefined;
     };
@@ -171,30 +169,31 @@ var private = function(key, parent) {
 
 // Create closure
 var ParentClass = function() {
-    var key = {}; // Create key within closure
+    var priv = '_ParentClass' + Math.random(); // Namespace
+    var key = {}; // Create key withing closure
     var ParentClass = function() {
-        this._ = private(key); // Create private access function
-        this._(key).priv_prop = 100; // Modify any private data
+        this[priv] = private(key); // Create private storage
+        this[priv](key).priv_prop = 100; // Modify any private data
     };
     ParentClass.prototype.parent_test = function() {
-        console.log(this._(key).priv_prop); // Access private data
+        console.log(this[priv](key).priv_prop); // Access private data
     };
     return ParentClass;
 }();
 
-// Create closure
 var ChildClass = function() {
-    var key = {}; // Create key within closure
+    var priv = '_ChildClass' + Math.random();
+    var key = {};
     var ChildClass = function() {
         ParentClass.call(this);
-        this._ = private(key, this._); // Create private access function
-        this._(key).priv_prop = 200; // Modify any private data
+        this[priv] = private(key);
+        this[priv](key).priv_prop = 200;
     };
     ChildClass.prototype = Object.create(
         ParentClass.prototype
     );
     ChildClass.prototype.test = function() {
-        console.log(this._(key).priv_prop); // Access private data
+        console.log(this[priv](key).priv_prop);
     };
     return ChildClass;
 }();
@@ -203,17 +202,15 @@ var instance = new ChildClass();
 instance.test(); // `200` logged, as expected
 instance.parent_test(); // `100` logged, as expected
 
-var wrong_key = {};
-instance._(wrong_key); // undefined; error logged
+// Yet, there's no way to access the property from outside of the closure
 ```
 
-Pretty much the only difference from previous Gist is that we added another argument to `private` to provide a parent's private access function. So, when we construct a child, we should create its private storage with `private(key, parentAccessFunction)` instead of `private(key)`. I suppose, another disadvantage of **accessor pattern** is that a child has to know where its parent's private access function is, but if we use `this._` as a convention, that problem is minimized.
+Pretty much the only difference from the previous code snippet is that we replaced `this._` for both child and parent classes with `this[priv]`, where `priv` is namespaced and randomly generated to ensure that private access function is stored under a different property name for child and parent.
 
-Another recommendation I can make is that you should probably secure `this._` by making it non-enumerable and read-only:
+Another recommendation I can make is that you should probably secure `this[priv]` by making it non-configurable, non-enumerable and read-only:
 
 ```javascript
-    Object.defineProperty(this, '_', {
-        configurable: true,
+    Object.defineProperty(this, priv, {
         value: private(key)
     })
 ```
@@ -221,11 +218,11 @@ Another recommendation I can make is that you should probably secure `this._` by
 Instead of just
 
 ```javascript
-    this._ = private(key)
+    this[priv] = private(key)
 ```
 
-This will make sure that user will not be able to remove or modify `this._`, which is crucial for correct private storage functioning.
+This will make sure that user will not be able to remove or modify `this[priv]`, which is crucial for correct private storage functioning.
 
 ## Conclusion
 
-Go ahead and use **accessor pattern**! It allows you to create truly encapsulated properties and use them on a prototype. Let others know about this method so we don't continue the misconception that privacy is impossible to achieve in JavaScript. Recommending this article will also help **😊**
+Go ahead and use **accessor pattern**! It allows you to create truly encapsulated properties and use them on a prototype. Let others know about this method so we don't continue the misconception that privacy is impossible to achieve in JavaScript. Sharing this article will also help **😊**

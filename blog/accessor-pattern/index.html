@@ -135,8 +135,8 @@ instance._(wrong_key); <span class="hljs-comment">// undefined; error logged</sp
 <ul>
 <li>It slightly pollutes the namespace, because you have to assign the private storage to <code>this._</code> or alike, but there's probably no other way to do this.</li>
 </ul>
-<h2>The problem</h2>
-<p>The problem with this method is that, in case of prototypal inheritance, if both child and parent use the same property name for the private access function (in this example, <code>this._</code>), then the parent's private properties cannot be accessed within parent's prototype, because <code>this._</code> will refer to child's private access function. Here's what I mean,</p>
+<h2>A problem</h2>
+<p>A minor problem with this method is that, in case of prototypal inheritance, if both child and parent use the same property name for the private access function (in this example, <code>this._</code>), then the parent's private properties cannot be accessed within parent's prototype, because <code>this._</code> will refer to child's private access function. Here's what I mean,</p>
 <pre class="hljs"><code><span class="hljs-comment">// Note: this Gist is to show a problem with accessor pattern</span>
 <span class="hljs-comment">// and inheritance. Do not use!</span>
 
@@ -181,20 +181,18 @@ instance._(wrong_key); <span class="hljs-comment">// undefined; error logged</sp
 instance.test(); <span class="hljs-comment">// `200` is correctly logged</span>
 instance.parent_test(); <span class="hljs-comment">// ERROR! (expected result: `100`)</span>
 </code></pre>
-<p>When <code>instance.parent_test</code> is called, <code>this._</code> inside it will refer to the child's private access function, hence, the <code>key</code> will mismatch and the error will be logged. However, this problem can be quite easily solved if we slightly modify <code>private</code> function and add a case for prototypal inheritance.</p>
-<h2>The solution</h2>
-<p>The final solution for creating private properties usable from prototype and allowing inheritance is as follows:</p>
+<p>When <code>instance.parent_test</code> is called, <code>this._</code> inside it will refer to the child's private access function, hence, the <code>key</code> will mismatch and the error will be logged. However, this problem can be quite easily solved.</p>
+<h2>The final solution</h2>
+<p>The best solution is to namespace and make sure that parent and child have different property names for their private access functions. Here's the final solution:</p>
 <pre class="hljs"><code><span class="hljs-comment">/* Here's how you can create truly private
    properties in JS and use them on prototype */</span>
 
 <span class="hljs-comment">// Creates private storage, secures with a key, and</span>
-<span class="hljs-comment">// returns a private access function. Allows for inheritance</span>
-<span class="hljs-comment">// if `parent` private access function is provided</span>
-<span class="hljs-keyword">var</span> private = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key, parent</span>) </span>{
+<span class="hljs-comment">// returns a private access function</span>
+<span class="hljs-keyword">var</span> private = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key</span>) </span>{
     <span class="hljs-keyword">var</span> obj = {};
     <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">testkey</span>) </span>{
         <span class="hljs-keyword">if</span>(key === testkey) <span class="hljs-keyword">return</span> obj;
-        <span class="hljs-keyword">if</span>(parent) <span class="hljs-keyword">return</span> parent(testkey);
         <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Cannot access private properties'</span>);
         <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
     };
@@ -202,30 +200,31 @@ instance.parent_test(); <span class="hljs-comment">// ERROR! (expected result: `
 
 <span class="hljs-comment">// Create closure</span>
 <span class="hljs-keyword">var</span> ParentClass = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> key = {}; <span class="hljs-comment">// Create key within closure</span>
+    <span class="hljs-keyword">var</span> priv = <span class="hljs-string">'_ParentClass'</span> + <span class="hljs-built_in">Math</span>.random(); <span class="hljs-comment">// Namespace</span>
+    <span class="hljs-keyword">var</span> key = {}; <span class="hljs-comment">// Create key withing closure</span>
     <span class="hljs-keyword">var</span> ParentClass = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">this</span>._ = private(key); <span class="hljs-comment">// Create private access function</span>
-        <span class="hljs-keyword">this</span>._(key).priv_prop = <span class="hljs-number">100</span>; <span class="hljs-comment">// Modify any private data</span>
+        <span class="hljs-keyword">this</span>[priv] = private(key); <span class="hljs-comment">// Create private storage</span>
+        <span class="hljs-keyword">this</span>[priv](key).priv_prop = <span class="hljs-number">100</span>; <span class="hljs-comment">// Modify any private data</span>
     };
     ParentClass.prototype.parent_test = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>._(key).priv_prop); <span class="hljs-comment">// Access private data</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>[priv](key).priv_prop); <span class="hljs-comment">// Access private data</span>
     };
     <span class="hljs-keyword">return</span> ParentClass;
 }();
 
-<span class="hljs-comment">// Create closure</span>
 <span class="hljs-keyword">var</span> ChildClass = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> key = {}; <span class="hljs-comment">// Create key within closure</span>
+    <span class="hljs-keyword">var</span> priv = <span class="hljs-string">'_ChildClass'</span> + <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-keyword">var</span> key = {};
     <span class="hljs-keyword">var</span> ChildClass = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         ParentClass.call(<span class="hljs-keyword">this</span>);
-        <span class="hljs-keyword">this</span>._ = private(key, <span class="hljs-keyword">this</span>._); <span class="hljs-comment">// Create private access function</span>
-        <span class="hljs-keyword">this</span>._(key).priv_prop = <span class="hljs-number">200</span>; <span class="hljs-comment">// Modify any private data</span>
+        <span class="hljs-keyword">this</span>[priv] = private(key);
+        <span class="hljs-keyword">this</span>[priv](key).priv_prop = <span class="hljs-number">200</span>;
     };
     ChildClass.prototype = <span class="hljs-built_in">Object</span>.create(
         ParentClass.prototype
     );
     ChildClass.prototype.test = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>._(key).priv_prop); <span class="hljs-comment">// Access private data</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>[priv](key).priv_prop);
     };
     <span class="hljs-keyword">return</span> ChildClass;
 }();
@@ -234,22 +233,20 @@ instance.parent_test(); <span class="hljs-comment">// ERROR! (expected result: `
 instance.test(); <span class="hljs-comment">// `200` logged, as expected</span>
 instance.parent_test(); <span class="hljs-comment">// `100` logged, as expected</span>
 
-<span class="hljs-keyword">var</span> wrong_key = {};
-instance._(wrong_key); <span class="hljs-comment">// undefined; error logged</span>
+<span class="hljs-comment">// Yet, there's no way to access the property from outside of the closure</span>
 </code></pre>
-<p>Pretty much the only difference from previous Gist is that we added another argument to <code>private</code> to provide a parent's private access function. So, when we construct a child, we should create its private storage with <code>private(key, parentAccessFunction)</code> instead of <code>private(key)</code>. I suppose, another disadvantage of <strong>accessor pattern</strong> is that a child has to know where its parent's private access function is, but if we use <code>this._</code> as a convention, that problem is minimized.</p>
-<p>Another recommendation I can make is that you should probably secure <code>this._</code> by making it non-enumerable and read-only:</p>
-<pre class="hljs"><code>    <span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">'_'</span>, {
-        <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+<p>Pretty much the only difference from the previous code snippet is that we replaced <code>this._</code> for both child and parent classes with <code>this[priv]</code>, where <code>priv</code> is namespaced and randomly generated to ensure that private access function is stored under a different property name for child and parent.</p>
+<p>Another recommendation I can make is that you should probably secure <code>this[priv]</code> by making it non-configurable, non-enumerable and read-only:</p>
+<pre class="hljs"><code>    <span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-keyword">this</span>, priv, {
         <span class="hljs-attr">value</span>: private(key)
     })
 </code></pre>
 <p>Instead of just</p>
-<pre class="hljs"><code>    <span class="hljs-keyword">this</span>._ = private(key)
+<pre class="hljs"><code>    <span class="hljs-keyword">this</span>[priv] = private(key)
 </code></pre>
-<p>This will make sure that user will not be able to remove or modify <code>this._</code>, which is crucial for correct private storage functioning.</p>
+<p>This will make sure that user will not be able to remove or modify <code>this[priv]</code>, which is crucial for correct private storage functioning.</p>
 <h2>Conclusion</h2>
-<p>Go ahead and use <strong>accessor pattern</strong>! It allows you to create truly encapsulated properties and use them on a prototype. Let others know about this method so we don't continue the misconception that privacy is impossible to achieve in JavaScript. Recommending this article will also help <strong>😊</strong></p>
+<p>Go ahead and use <strong>accessor pattern</strong>! It allows you to create truly encapsulated properties and use them on a prototype. Let others know about this method so we don't continue the misconception that privacy is impossible to achieve in JavaScript. Sharing this article will also help <strong>😊</strong></p>
 
                     </div>
                 </div>

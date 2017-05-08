@@ -1,44 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title id="doc-title" router-type="basic">Kirill Shestakov - About</title>
-    <meta name="author" content="Kirill Shestakov">
-    <meta name="theme-color" content="#383548">
-    <meta name="routerAnchor:href" content="/">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pridi:300" rel="stylesheet">
-    <script src="/scripts/document-register-element.js"></script>
-    <script src="/scripts/components/RouterAnchor.js"></script>
-    <script src="/scripts/RouterAnchor-types.js"></script>
-    <script src="/scripts/polyfills.js"></script>
-    <script src="/scripts/main.js"></script>
-</head>
-<body class="home">
-    <div class="header" id="header" router-type="attribute-change"
-        ><div class="banner"></div
-        ><div class="overlay"></div
-        ><div class="info-container">
-            <div class="photo"></div>
-            <div class="name">Kirill Shestakov</div>
-            <div class="description">Web Developer in Vancouver</div>
-        </div
-        ><div class="menu">
-            <a href="/" is="router-anchor">
-                <div class="menu-item active" id="home-menu-link" router-type="basic">About</div>
-            </a>
-            <a href="/blog/" is="router-anchor">
-                <div class="menu-item" id="blog-menu-link" router-type="basic">Blog</div>
-            </a>
-            <a href="/portfolio/" is="router-anchor">
-                <div class="menu-item" id="portfolio-menu-link" router-type="basic">Portfolio</div>
-            </a>
-        </div
-    ></div>
-    <div id="main-page-content" router-type="fade-child">
-        <div class="content">
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title id="doc-title" router-type="basic">Kirill Shestakov - About</title>
+                <meta name="author" content="Kirill Shestakov">
+                <meta name="theme-color" content="#383548">
+                <meta name="routerAnchor:href" content="/">
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <link rel="stylesheet" type="text/css" href="/styles/style.css">
+                <link rel="stylesheet" type="text/css" href="/styles/monokai-sublime.css">
+                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Pridi:300" rel="stylesheet">
+                <script src="/scripts/document-register-element.js"></script>
+                <script src="/scripts/components/RouterAnchor.js"></script>
+                <script src="/scripts/RouterAnchor-types.js"></script>
+                <script src="/scripts/polyfills.js"></script>
+                <script src="/scripts/main.js"></script>
+            </head>
+            <body class="home">
+                <div class="header" id="header" router-type="attribute-change"
+                ><div class="banner"></div
+                ><div class="overlay"></div
+                ><div class="info-container">
+                    <div class="photo"></div>
+                    <div class="name">Kirill Shestakov</div>
+                    <div class="description">Web Developer in Vancouver</div>
+                </div
+                ><div class="menu">
+                    <a href="/" is="router-anchor">
+                            <div
+                                class="menu-item active"
+                                id="main_nav_data-about"
+                                router-type="basic"
+                            >About</div>
+                        </a><a href="/blog/" is="router-anchor">
+                            <div
+                                class="menu-item"
+                                id="main_nav_data-blog"
+                                router-type="basic"
+                            >Blog</div>
+                        </a><a href="/portfolio/" is="router-anchor">
+                            <div
+                                class="menu-item"
+                                id="main_nav_data-portfolio"
+                                router-type="basic"
+                            >Portfolio</div>
+                        </a>
+                </div
+            ></div>
+                <div id="main-page-content" router-type="fade-child">
+                    <div class="content">
+                        <div class="content">
             <h1>About me</h1>
             <p>My name is Kirill and I am a Web Developer living in Vancouver. I love the <a href="https://www.w3.org/wiki/Open_Web_Platform" target="_blank">Open Web</a> and enjoy creating Open Source projects. I actively participate in the developer community by helping others on Stack Overflow and Reddit and by writing articles about Web Development. Feel free to check out my <a href="/blog/" is="router-anchor">Blog</a> and <a href="/portfolio/" is="router-anchor">Portfolio</a>. You can find me on:</p>
             <div class="external-profiles"
@@ -49,12 +61,13 @@
                 ><div><a target="_blank" href="https://dev.to/guitarino/"><span class="external-profile-icon devto"></span><span class="external-profile-name">Dev.to</span></a></div
             ></div>
         </div>
-    </div>
-    <div class="footer-spacer"></div>
-    <div class="footer"
-        ><div class="copyright">
-            &copy; Copyright 2017 Kirill Shestakov
-        </div
-    ></div>
-</body>
-</html>
+                    </div>
+                </div>
+                <div class="footer-spacer"></div>
+            <div class="footer"
+                ><div class="copyright">
+                    &copy; Copyright 2017 Kirill Shestakov
+                </div
+            ></div>
+            </body>
+            </html>

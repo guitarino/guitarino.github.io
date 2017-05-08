@@ -1,0 +1,28 @@
+{
+  "name": "guitarino.github.io",
+  "version": "1.0.0",
+  "description": "My personal website / portfolio",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guitarino/guitarino.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "portfolio"
+  ],
+  "author": "Kirill Shestakov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guitarino/guitarino.github.io/issues"
+  },
+  "homepage": "https://github.com/guitarino/guitarino.github.io#readme",
+  "dependencies": {
+    "fs-path": "0.0.23",
+    "highlight.js": "^9.11.0",
+    "markdown-it": "^8.3.1"
+  }
+}

@@ -341,6 +341,10 @@ body {
     font-weight: bold;
 }
 
+.content p a {
+    text-decoration: underline;
+}
+
 .content a.link-root {
     color: inherit;
     font-weight: inherit;

@@ -210,15 +210,15 @@ Pretty much the only difference from the previous code snippet is that we replac
 Another recommendation I can make is that you should probably secure `this[priv]` by making it non-configurable, non-enumerable and read-only:
 
 ```javascript
-    Object.defineProperty(this, priv, {
-        value: private(key)
-    })
+Object.defineProperty(this, priv, {
+    value: private(key)
+})
 ```
 
 Instead of just
 
 ```javascript
-    this[priv] = private(key)
+this[priv] = private(key)
 ```
 
 This will make sure that user will not be able to remove or modify `this[priv]`, which is crucial for correct private storage functioning.

@@ -341,6 +341,7 @@ body {
     font-weight: bold;
 }
 
+.portfolio-title a,
 .content p a {
     text-decoration: underline;
     text-decoration-skip: ink;
@@ -442,10 +443,6 @@ body {
 .portfolio-title > * {
     display: inline-block;
     width: 100%;
-}
-
-.portfolio-title a {
-    text-decoration: underline;
 }
 
 .portfolio-title .job-date {

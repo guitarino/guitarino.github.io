@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 var sortPosts = function(post1, post2) {
-    return new Date(post2.date) - new Date(post1.date);
+    return new Date(post2.blogpost.date) - new Date(post1.blogpost.date);
 };
 
 var categoriesObj = {};

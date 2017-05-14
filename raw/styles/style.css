@@ -343,6 +343,8 @@ body {
 
 .content p a {
     text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-color: currentColor;
 }
 
 .content a.link-root {

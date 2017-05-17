@@ -38,6 +38,7 @@ module.exports = {
                 <script src="/scripts/RouterAnchor-types.js"></script>
                 <script src="/scripts/polyfills.js"></script>
                 <script src="/scripts/main.js"></script>
+                ${templates.analytics()}
             </head>
             <body class="home">
                 ${templates.header(data)}

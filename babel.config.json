@@ -13,6 +13,14 @@
 		}],
 		["@babel/plugin-transform-react-jsx", {
 			"pragma": "h"
+		}],
+		["module-resolver", {
+			"alias": {
+				"@components": "./src/components",
+				"@pages": "./src/pages",
+				"@view": "./src/view",
+				"@utils": "./src/utils"
+			}
 		}]
 	]
 }

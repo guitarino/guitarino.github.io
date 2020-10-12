@@ -1,9 +1,14 @@
-import { h } from 'preact';
+import { h, AnyComponent } from 'preact';
 import Link from "@components/Link";
 
-export default function Page() {
-	const activeMenu: string = 'about';
-	const PageComponent = 'div';
+type PageProps = {
+	activeMenu: string,
+	pageComponent: AnyComponent,
+	isLoading: boolean,
+};
+
+export default function Page({ activeMenu, pageComponent, isLoading }: PageProps) {
+	const PageComponent: any = pageComponent;
 	return <div class="Page__Header">
 		<div class="Page__HeaderBanner"></div>
 		<div class="Page__HeaderOverlay"></div>
@@ -27,7 +32,7 @@ export default function Page() {
 			<PageComponent />
 		</div>
 		<div class="Page__Footer">
-			© Copyright 2020 Kirill Shestakov
+			© Copyright 2020 Kirill Shestakov [{isLoading ? `loading` : `not loading`}]
 		</div>
 	</div>;
 }

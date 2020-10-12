@@ -1,7 +1,11 @@
-import { renderApp } from "./App/App";
+import { renderApp } from "@components/App";
+import { createBrowserHistory } from "history";
 
 function main() {
-	renderApp(document.getElementById('root')!);
+	renderApp({
+		history: createBrowserHistory(),
+		root: document.getElementById('root')!
+	});
 }
 
 main();

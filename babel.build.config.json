@@ -1,0 +1,26 @@
+{
+	"presets": [
+		["@babel/preset-env"],
+		["@babel/preset-typescript", {
+			"jsxPragma": "h"
+		}]
+	],
+	"plugins": [
+		["@babel/plugin-transform-runtime"],
+		["babel-plugin-transform-dynamic-import-to-static"],
+		["@babel/plugin-proposal-class-properties", {
+			"loose" : true
+		}],
+		["@babel/plugin-transform-react-jsx", {
+			"pragma": "h"
+		}],
+		["module-resolver", {
+			"alias": {
+				"@components": "./src/components",
+				"@pages": "./src/pages",
+				"@view": "./src/view",
+				"@utils": "./src/utils"
+			}
+		}]
+	]
+}

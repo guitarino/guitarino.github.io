@@ -1,29 +1,29 @@
 {
   "name": "guitarino.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "My personal website / portfolio",
-  "main": "generate.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node generate.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guitarino/guitarino.github.io.git"
-  },
-  "keywords": [
-    "website",
-    "portfolio"
-  ],
+  "main": "build/main.js",
+  "repository": "https://github.com/guitarino/guitarino.github.io.git",
   "author": "Kirill Shestakov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/guitarino/guitarino.github.io/issues"
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/node": "^14.11.8",
+    "@types/webpack-env": "^1.15.3",
+    "babel-loader": "^8.1.0",
+    "pnp-webpack-plugin": "^1.6.4",
+    "typescript": "^4.0.3",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
   },
-  "homepage": "https://github.com/guitarino/guitarino.github.io#readme",
   "dependencies": {
-    "fs-path": "0.0.23",
-    "highlight.js": "^9.11.0",
-    "markdown-it": "^8.3.1"
+    "preact": "^10.5.4"
   }
 }

@@ -10,6 +10,7 @@ export default async function getWebpackConfig() {
 			'main': './src/main.ts',
 		},
 		mode: 'development',
+		devtool: 'inline-source-map',
 		output: {
 			path: path.resolve(__dirname, '.build'),
 			publicPath: '/',
@@ -27,7 +28,6 @@ export default async function getWebpackConfig() {
 				PnpWebpackPlugin.moduleLoader(module),
 			],
 		},
-		devtool: 'inline-source-map',
 		module: {
 			rules: [
 				{
@@ -39,7 +39,21 @@ export default async function getWebpackConfig() {
 							configFile: path.resolve(__dirname, 'babel.config.json')
 						}
 					}
-				}
+				},
+				{
+					test: /\.(s[ac]ss|css)$/i,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								name: '[name].[contenthash].css'
+							},
+						},
+						'extract-loader',
+						'css-loader',
+						'sass-loader',
+					],
+				},
 			]
 		},
 		optimization: {
@@ -49,8 +63,8 @@ export default async function getWebpackConfig() {
 		},
 		plugins: [
 			new CleanWebpackPlugin(),
-			...(<any> await getHtmlPlugins()),
-			<any> new WebpackPwaManifest({
+			...(await getHtmlPlugins()),
+			new WebpackPwaManifest({
 				"name": "Kirill Shestakov - Full Stack Developer",
 				"short_name": "Kirill Shestakov",
 				"description": "Kirill Shestakov - Full Stack Developer - Personal website",
@@ -58,42 +72,36 @@ export default async function getWebpackConfig() {
 				"theme_color": "#383548",
 				"display": "standalone",
 				"orientation": "natural",
-				"icons": <any>[
+				"icons": <any> [
 					{
 						"src": "./assets/images/favicon/android-icon-36x36.png",
 						"sizes": "36x36",
-						"type": "image/png",
-						"density": "0.75"
+						"type": "image/png"
 					},
 					{
 						"src": "./assets/images/favicon/android-icon-48x48.png",
 						"sizes": "48x48",
-						"type": "image/png",
-						"density": "1.0"
+						"type": "image/png"
 					},
 					{
 						"src": "./assets/images/favicon/android-icon-72x72.png",
 						"sizes": "72x72",
-						"type": "image/png",
-						"density": "1.5"
+						"type": "image/png"
 					},
 					{
 						"src": "./assets/images/favicon/android-icon-96x96.png",
 						"sizes": "96x96",
-						"type": "image/png",
-						"density": "2.0"
+						"type": "image/png"
 					},
 					{
 						"src": "./assets/images/favicon/android-icon-144x144.png",
 						"sizes": "144x144",
-						"type": "image/png",
-						"density": "3.0"
+						"type": "image/png"
 					},
 					{
 						"src": "./assets/images/favicon/android-icon-192x192.png",
 						"sizes": "192x192",
-						"type": "image/png",
-						"density": "4.0"
+						"type": "image/png"
 					}
 				]
 			})

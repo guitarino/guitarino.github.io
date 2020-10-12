@@ -19,8 +19,12 @@
 				"@components": "./src/components",
 				"@pages": "./src/pages",
 				"@view": "./src/view",
-				"@utils": "./src/utils"
+				"@utils": "./src/utils",
+				"@styles": "./src/styles"
 			}
+		}],
+		["babel-plugin-transform-require-ignore", {
+			"extensions": [".scss", ".sass", ".css"]
 		}]
 	]
 }

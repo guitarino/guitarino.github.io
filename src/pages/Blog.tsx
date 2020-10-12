@@ -1,5 +1,6 @@
 import Link from '@components/Link';
 import { h } from 'preact';
+import '@styles/Blog.scss';
 
 export const title = 'Kirill Shestakov - Blog';
 

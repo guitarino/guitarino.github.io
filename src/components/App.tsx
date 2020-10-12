@@ -6,7 +6,7 @@ import pages, { PageInfo } from '../pages';
 import { HistoryContext } from "@view/HistoryContext";
 
 async function getPageInfo(location: History['location']): Promise<PageInfo> {
-	for (let key in pages) {
+	for (const key in pages) {
 		if (location.pathname === key || location.pathname === `${key}/` || location.pathname === `${key}/index.html`) {
 			const loadPage = pages[key];
 			return await loadPage();

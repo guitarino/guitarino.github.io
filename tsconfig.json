@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"module": "esnext",
 		"target": "esnext",
 		"resolveJsonModule": true,
 		"experimentalDecorators": true,
@@ -15,7 +16,10 @@
 		"strictPropertyInitialization": false,
 		"types": ["node", "webpack-env"],
 		"baseUrl": ".",
-		"paths": {},
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@pages/*": ["src/pages/*"],
+		}
 	},
 	"include": [
 		"src"

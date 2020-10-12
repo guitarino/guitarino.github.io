@@ -1,5 +1,5 @@
-const path = require('path');
-const PnpWebpackPlugin = require('pnp-webpack-plugin');
+import * as path from 'path';
+import * as PnpWebpackPlugin from 'pnp-webpack-plugin';
 
 module.exports = {
 	entry: {
@@ -34,5 +34,10 @@ module.exports = {
 				}
 			}
 		]
+	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+		},
 	},
 };

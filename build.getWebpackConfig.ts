@@ -3,6 +3,7 @@ import PnpWebpackPlugin from 'pnp-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 import getHtmlPlugins from './src/build/getHtmlPlugins';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export default async function getWebpackConfig() {
 	return {
@@ -43,13 +44,7 @@ export default async function getWebpackConfig() {
 				{
 					test: /\.(s[ac]ss|css)$/i,
 					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								name: '[name].[contenthash].css'
-							},
-						},
-						'extract-loader',
+						MiniCssExtractPlugin.loader,
 						'css-loader',
 						'sass-loader',
 					],
@@ -59,11 +54,22 @@ export default async function getWebpackConfig() {
 		optimization: {
 			splitChunks: {
 				chunks: 'all',
+				cacheGroups: {
+					styles: {
+						name: 'styles',
+						test: /\.s?css$/,
+						chunks: 'all',
+						minChunks: 1,
+						reuseExistingChunk: true,
+						enforce: true,
+					},
+				},
 			},
 		},
 		plugins: [
 			new CleanWebpackPlugin(),
 			...(await getHtmlPlugins()),
+			new MiniCssExtractPlugin(),
 			new WebpackPwaManifest({
 				"name": "Kirill Shestakov - Full Stack Developer",
 				"short_name": "Kirill Shestakov",

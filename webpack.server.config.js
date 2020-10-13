@@ -2,6 +2,10 @@ const path = require('path');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+/**
+ * Everything is an external because we don't actually want to bundle,
+ * we just want to transform, use loaders, run the code and peace out
+ */
 function getExternals() {
 	const package = require('./package.json');
 	const externals = {};

@@ -1687,6 +1687,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/markdown-to-jsx@npm:^6.11.2":
+  version: 6.11.2
+  resolution: "@types/markdown-to-jsx@npm:6.11.2"
+  dependencies:
+    "@types/react": "*"
+  checksum: 76f0105caaddbec67ff56e8db512fd833611afba681ce98c02c5d2a4ce745b84cc95fac8b3d9375c8028e6b6d78ecd7c3a1374d0e9d0d5d6470e880755c1e7cd
+  languageName: node
+  linkType: hard
+
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -1698,6 +1707,23 @@ __metadata:
   version: 14.11.8
   resolution: "@types/node@npm:14.11.8"
   checksum: 5139c07ba76d791b4930fa02ec746656dacf78b43c431d56a7514a8285962d0511bf356bee870968a541033c14967b58f7b2a58c48ac81646ce4eb28d2ff433d
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:*":
+  version: 15.7.3
+  resolution: "@types/prop-types@npm:15.7.3"
+  checksum: bd0eab69d5120ad3784d0c9985f902653d5924707a7f2b3702a330e762dfd61b6494954cb54ad0c52b918ffd6f1e7e27c9270e4442bc15250de348596f2f60cb
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 16.9.52
+  resolution: "@types/react@npm:16.9.52"
+  dependencies:
+    "@types/prop-types": "*"
+    csstype: ^3.0.2
+  checksum: 5e352e28b7a5ee6104a1ddddb7585ce50f88c5fca78f2edb73cc6df897ab3efa4404111052b643782d130755b8657494f3f5324b1eba4644b4a36fea34fec6fb
   languageName: node
   linkType: hard
 
@@ -2155,13 +2181,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-transform-require-ignore@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "babel-plugin-transform-require-ignore@npm:0.1.1"
-  checksum: a383129dec1a2e90de0512d3fb9cb1bd6b6936abd3e995476fbdc43709d37e903d626290688f7bc114102af909d7f16cc29cecfdc555160de4041931fb69d580
-  languageName: node
-  linkType: hard
-
 "balanced-match@npm:^1.0.0":
   version: 1.0.0
   resolution: "balanced-match@npm:1.0.0"
@@ -2575,6 +2594,13 @@ __metadata:
   bin:
     cssesc: bin/cssesc
   checksum: 673783eda1f89af3faefc0e4b833f40621f484ce102a23396e7a65cc4c42798bd91ee3656c8b04a0a5ca38d40ada5bc8663e4541c380a7a81af2de5b2322e443
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "csstype@npm:3.0.3"
+  checksum: ec722366b468229bcc6c7fa3f07eb795efddfc4fdcfeb81728046f8bd20e21584735e89973ec18e8b0d4d3c8dddb288872440ee034836c159d664798da4cf832
   languageName: node
   linkType: hard
 
@@ -3192,22 +3218,26 @@ fsevents@~2.1.2:
     "@babel/preset-typescript": ^7.10.4
     "@babel/register": ^7.11.5
     "@babel/runtime": ^7.11.2
+    "@types/markdown-to-jsx": ^6.11.2
     "@types/node": ^14.11.8
     "@types/webpack": ^4.41.22
     "@types/webpack-env": ^1.15.3
     babel-loader: ^8.1.0
+    babel-plugin-dynamic-import-node: ^2.3.3
     babel-plugin-module-resolver: ^4.0.0
     babel-plugin-transform-dynamic-import-to-static: ^1.0.1
-    babel-plugin-transform-require-ignore: ^0.1.1
     clean-webpack-plugin: ^3.0.0
     css-loader: ^4.3.0
     history: ^5.0.0
     html-webpack-plugin: ^4.5.0
     http-server: ^0.12.3
+    markdown-to-jsx: ^7.0.1
     mini-css-extract-plugin: ^1.0.0
     pnp-webpack-plugin: ^1.6.4
     preact: ^10.5.4
     preact-render-to-string: ^5.1.10
+    raw-loader: ^4.0.2
+    react: "npm:@preact/compat@^0.0.3"
     sass: ^1.27.0
     sass-loader: ^10.0.3
     typescript: ^4.0.3
@@ -3871,6 +3901,15 @@ fsevents@~2.1.2:
   dependencies:
     semver: ^6.0.0
   checksum: 54b6f186c209c1b133d0d1710e6b04c41ebfcb0dac699e5a369ea1223f22c0574ef820b91db37cae6c245f5bda8aff9bfec94f6c23e7d75970446b34a58a79b0
+  languageName: node
+  linkType: hard
+
+"markdown-to-jsx@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "markdown-to-jsx@npm:7.0.1"
+  peerDependencies:
+    react: ">= 0.14.0"
+  checksum: 919b3b64eeaaceda56e32b02ff3007172eaaef75f66c984d243b6a9595437e9fb35244e4a8b9964e80805bd7ffe203e42e20e2906b21466481b9e2337f9c4d68
   languageName: node
   linkType: hard
 
@@ -4709,6 +4748,27 @@ fsevents@~2.1.2:
   dependencies:
     safe-buffer: ^5.1.0
   checksum: ede2693af09732ceab1c273dd70db787f34a7b8d95bab13f1aca763483c0113452a78e53d61ff18d393dcea586d388e01f198a5132a4a85cebba31ec54164b75
+  languageName: node
+  linkType: hard
+
+"raw-loader@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "raw-loader@npm:4.0.2"
+  dependencies:
+    loader-utils: ^2.0.0
+    schema-utils: ^3.0.0
+  peerDependencies:
+    webpack: ^4.0.0 || ^5.0.0
+  checksum: 1a08968df5bf185923102de589dc28da6c9953f87059c80de3cbfdfb47bc15907f23f5e21048f03af2842df01d0dde2630826697c783c4c9683ea71f04f4538d
+  languageName: node
+  linkType: hard
+
+"react@npm:@preact/compat@^0.0.3":
+  version: 0.0.3
+  resolution: "@preact/compat@npm:0.0.3"
+  peerDependencies:
+    preact: "*"
+  checksum: 82e25edb27f50d16e96910fb9b0ef7c7231e8bcd9f78c0f4c27a499665c3271032090e34e8c350f2733e58c6caf5617737d8ecdb92c1b7ebbeb24c3fe84ad24d
   languageName: node
   linkType: hard
 

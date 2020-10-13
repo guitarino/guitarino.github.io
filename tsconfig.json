@@ -21,8 +21,12 @@
 			"@pages/*": ["src/pages/*"],
 			"@view/*": ["src/view/*"],
 			"@utils/*": ["src/utils/*"],
-			"@styles/*": ["src/styles/*"]
-		}
+			"@styles/*": ["src/styles/*"],
+			"@content/*": ["content/*"]
+		},
+		"typeRoots": [
+			"./src/typings"
+		]
 	},
 	"include": [
 		"src"

@@ -1,43 +1,53 @@
-const path = require('path');
 const webpack = require('webpack');
 
-require("@babel/register")({
-	"extensions": ['.js', '.jsx', '.ts', '.tsx'],
-	"configFile": path.resolve(__dirname, 'babel.build.config.json'),
-	"only": [
-		fn => {
-			const file = path.resolve(fn);
-			return file.indexOf(path.resolve(__dirname, 'src')) === 0 ||
-				file.indexOf(path.resolve(__dirname, 'build.getWebpackConfig.ts')) === 0;
-		}
-	],
-});
+const configs = {
+	getServer: require('./webpack.server.config'),
+	getClient: require('./webpack.client.config')
+};
 
-const getWebpackConfig = require('./build.getWebpackConfig').default;
-
-getWebpackConfig().then((config) => {
-	webpack(config, (err, stats) => {
-		if (err) {
-			console.error(err.stack || err);
-			if (err.details) {
-				console.error(err.details);
-			}
-			return;
+function logErrors(err, stats) {
+	if (err) {
+		console.error(err.stack || err);
+		if (err.details) {
+			console.error(err.details);
 		}
-		
-		const info = stats.toJson();
+		return;
+	}
 	
-		if (stats.hasErrors()) {
-			console.error(info.errors);
-		}
-	
-		if (stats.hasWarnings()) {
-			console.warn(info.warnings);
-		}
+	const info = stats.toJson();
 
-		console.log(stats.toString({
-			chunks: false,
-			colors: true
-		}));
+	if (stats.hasErrors()) {
+		console.error(info.errors);
+	}
+
+	if (stats.hasWarnings()) {
+		console.warn(info.warnings);
+	}
+}
+
+webpack(configs.getServer(), (err, stats) => {
+	logErrors(err, stats);
+
+	console.log('<Server side>');
+	console.log(stats.toString({
+		chunks: false,
+		colors: true
+	}));
+	console.log('</Server side>');
+
+	console.log('<Require />');
+	const { getHtmlPlugins } = require('./.build-server/main');
+
+	getHtmlPlugins().then(plugins => {
+		webpack(configs.getClient(plugins), (err, stats) => {
+			logErrors(err, stats);
+
+			console.log('<Client side>');
+			console.log(stats.toString({
+				chunks: false,
+				colors: true
+			}));
+			console.log('</Client side>');
+		});
 	});
 });

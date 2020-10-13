@@ -1,6 +1,7 @@
 node_modules
 old
-.build
+.build-client
+.build-server
 .yarn/*
 !.yarn/cache
 !.yarn/releases

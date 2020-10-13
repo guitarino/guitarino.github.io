@@ -1,19 +1,18 @@
-import path from 'path';
-import PnpWebpackPlugin from 'pnp-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import WebpackPwaManifest from 'webpack-pwa-manifest';
-import getHtmlPlugins from './src/build/getHtmlPlugins';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const path = require('path');
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-export default async function getWebpackConfig() {
+module.exports = function getWebpackConfig(htmlPlugins) {
 	return {
 		entry: {
-			'main': './src/main.ts',
+			'main': './src/main-client.ts',
 		},
 		mode: 'development',
 		devtool: 'inline-source-map',
 		output: {
-			path: path.resolve(__dirname, '.build'),
+			path: path.resolve(__dirname, '.build-client'),
 			publicPath: '/',
 			filename: '[name].js',
 			chunkFilename: '[id].js',
@@ -37,7 +36,7 @@ export default async function getWebpackConfig() {
 					use: {
 						loader: require.resolve('babel-loader'),
 						options: {
-							configFile: path.resolve(__dirname, 'babel.config.json')
+							configFile: path.resolve(__dirname, 'babel.client.config.json')
 						}
 					}
 				},
@@ -48,6 +47,10 @@ export default async function getWebpackConfig() {
 						'css-loader',
 						'sass-loader',
 					],
+				},
+				{
+					test: /\.md$/i,
+					use: 'raw-loader',
 				},
 			]
 		},
@@ -68,7 +71,7 @@ export default async function getWebpackConfig() {
 		},
 		plugins: [
 			new CleanWebpackPlugin(),
-			...(await getHtmlPlugins()),
+			...htmlPlugins,
 			new MiniCssExtractPlugin(),
 			new WebpackPwaManifest({
 				"name": "Kirill Shestakov - Full Stack Developer",
@@ -78,7 +81,7 @@ export default async function getWebpackConfig() {
 				"theme_color": "#383548",
 				"display": "standalone",
 				"orientation": "natural",
-				"icons": <any> [
+				"icons": [
 					{
 						"src": "./assets/images/favicon/android-icon-36x36.png",
 						"sizes": "36x36",

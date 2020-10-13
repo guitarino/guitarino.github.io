@@ -7,7 +7,7 @@
 	],
 	"plugins": [
 		["@babel/plugin-transform-runtime"],
-		["babel-plugin-transform-dynamic-import-to-static"],
+		["dynamic-import-node"],
 		["@babel/plugin-proposal-class-properties", {
 			"loose" : true
 		}],
@@ -20,11 +20,9 @@
 				"@pages": "./src/pages",
 				"@view": "./src/view",
 				"@utils": "./src/utils",
-				"@styles": "./src/styles"
+				"@styles": "./src/styles",
+				"@content": "./content"
 			}
-		}],
-		["babel-plugin-transform-require-ignore", {
-			"extensions": [".scss", ".sass", ".css"]
 		}]
 	]
 }

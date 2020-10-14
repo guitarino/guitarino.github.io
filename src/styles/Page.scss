@@ -12,6 +12,20 @@
 		color: $light-text-color;
 		font-family: 'Lato', sans-serif;
 		z-index: 1;
+		transition: height $header-transition-time ease-in-out;
+
+		&--shorter {
+			height: $header-height-shorter;
+
+			.Page__HeaderPhoto {
+				width: 120px;
+				height: 120px;
+			}
+
+			.Page__HeaderInfoContainer {
+				transform: translateY(-50%) translateY(-20px);
+			}
+		}
 	}
 
 	&__HeaderBanner,
@@ -27,11 +41,12 @@
 	&__HeaderInfoContainer {
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%) translateY(-30px);
+		transform: translateY(-50%) translateY(-25px);
 		left: 0;
 		width: 100%;
 		text-align: center;
 		padding: 10px;
+		transition: transform $header-transition-time linear;
 	}
 
 	&__HeaderBanner {
@@ -52,6 +67,8 @@
 		background-position: center;
 		background-size: cover;
 		margin: 0 auto 10px auto;
+		transition: width $header-transition-time linear,
+			height $header-transition-time linear;
 	}
 
 	&__HeaderName {
@@ -77,7 +94,7 @@
 		margin: 0px 1.5vw 0px 1.5vw;
 		padding: 15px 1vw 8px 1vw;
 		color: $menu-item-color;
-		transition: color 200ms ease-in-out;
+		transition: color $menu-transition-time ease-in-out;
 
 		&::before {
 			content: '';
@@ -89,8 +106,7 @@
 			background: $light-text-color;
 			opacity: 0;
 			will-change: opacity;
-			-webkit-transition: opacity 200ms ease-in-out;
-			transition: opacity 200ms ease-in-out;
+			transition: opacity $menu-transition-time ease-in-out;
 			border-radius: 1.5px;
 		}
 
@@ -105,9 +121,9 @@
 	}
 
 	&__Content {
+		font-size: 19px;
 		line-height: 1.6;
 		color: $content-color;
-		font-size: 19px;
 		background-color: $content-bg-color;
 		padding: $content-vertical-padding $content-horizontal-padding;
 
@@ -178,7 +194,8 @@
 		pre {
 			margin: 0 -40px 20px -40px !important;
 			padding: 40px !important;
-			max-width: calc(100vw - 8px);
+			max-width: calc(100% + #{2 * $content-horizontal-padding});
+			font-size: 15px;
 		}
 
 		p > code {

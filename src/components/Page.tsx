@@ -11,7 +11,7 @@ type PageProps = {
 export default function Page({ activeMenu, pageComponent, isLoading }: PageProps) {
 	const PageComponent: any = pageComponent;
 	return <div class="Page">
-		<div class="Page__Header">
+		<div class={`Page__Header ${activeMenu !== 'about' ? `Page__Header--shorter` : ``}`}>
 			<div class="Page__HeaderBanner"></div>
 			<div class="Page__HeaderOverlay"></div>
 			<div class="Page__HeaderInfoContainer">

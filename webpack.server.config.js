@@ -69,7 +69,7 @@ module.exports = function getWebpackConfig() {
 			]
 		},
 		plugins: [
-			new CleanWebpackPlugin(),
+			// new CleanWebpackPlugin(),
 		],
 	};
 }

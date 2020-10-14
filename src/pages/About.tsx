@@ -6,8 +6,8 @@ export const title = 'Kirill Shestakov - About';
 
 export const menu = 'about';
 
-export default function About() {
-	return <div class="About">
+export default function About(props: { class?: string }) {
+	return <div class={`About ${props.class || ``}`}>
 		<h1>About me</h1>
 		<p>
 			My name is Kirill and I am a Web Developer living in Vancouver.

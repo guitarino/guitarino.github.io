@@ -5,8 +5,8 @@ export const title = 'Kirill Shestakov - Portfolio';
 
 export const menu = 'portfolio';
 
-export default function Portfolio() {
-	return <div class="Portfolio">
+export default function Portfolio(props: { class?: string }) {
+	return <div class={`Portfolio ${props.class || ``}`}>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
 				Profile

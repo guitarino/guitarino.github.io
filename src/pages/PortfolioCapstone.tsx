@@ -5,8 +5,8 @@ export const title = 'Kirill Shestakov - Portfolio - Medical Sensor Mobile App';
 
 export const menu = 'portfolio';
 
-export default function PortfolioCapstone() {
-	return <div class="PortfolioCapstone">
+export default function PortfolioCapstone(props: { class?: string }) {
+	return <div class={`PortfolioCapstone ${props.class || ``}`}>
 		<h1>Medical Sensor Mobile App</h1>
 		<p>
 			Medical Sensor System was created for <Link href="http://www.biointeractivetech.com/">BioInteractive Technologies</Link> as

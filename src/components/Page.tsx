@@ -1,6 +1,7 @@
 import { h, AnyComponent } from 'preact';
 import Link from "@components/Link";
 import '@styles/Page.scss';
+import TextLoading from './TextLoading';
 
 type PageProps = {
 	activeMenu: string,
@@ -20,23 +21,30 @@ export default function Page({ activeMenu, pageComponent, isLoading }: PageProps
 				<div class="Page__HeaderDescription">Web Developer in Vancouver</div>
 			</div>
 			<nav class="Page__HeaderMenu">
-				<Link href="/">
+				<Link class="Page__MenuLink" href="/">
 					<div class={`Page__MenuItem ${activeMenu === 'about' ? `Page__MenuItem--active` : ``}`}>About</div>
 				</Link>
-				<Link href="/blog/" is="router-anchor">
+				<Link class="Page__MenuLink" href="/blog/">
 					<div class={`Page__MenuItem ${activeMenu === 'blog' ? `Page__MenuItem--active` : ``}`}>Blog</div>
 				</Link>
-				<Link href="/portfolio/" is="router-anchor">
+				<Link class="Page__MenuLink" href="/portfolio/">
 					<div class={`Page__MenuItem ${activeMenu === 'portfolio' ? `Page__MenuItem--active` : ``}`}>Portfolio</div>
 				</Link>
 			</nav>
 		</div>
-		<div class="Page__Content">
-			<PageComponent />
+		<div class="Page__ContentContainer">
+			<PageComponent class={`Page__Content ${isLoading ? `Page__Content--loading` : ``}`} />
+			{
+				isLoading &&
+					<div class="Page__ContentLoading">
+						<TextLoading />
+						<TextLoading />
+					</div>
+			}
 		</div>
 		<div class="Page__FooterSpacer"></div>
 		<div class="Page__Footer">
-			<div class="Page__FooterContent">© Copyright 2020 Kirill Shestakov [{isLoading ? `loading` : `not loading`}]</div>
+			<div class="Page__FooterContent">© Copyright 2020 Kirill Shestakov</div>
 		</div>
 	</div>;
 }

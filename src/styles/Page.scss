@@ -1,5 +1,10 @@
 @import "../styles-lib/vars.scss";
 
+@keyframes contentTextLoadingAppear {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
 .Page {
 	position: relative;
 	min-height: 100vh;
@@ -80,6 +85,15 @@
 		font-size: 18px;
 	}
 
+	&__MenuLink {
+		color: $menu-item-color;
+		transition: color $menu-transition-time ease-in-out;
+
+		&:hover {
+			color: $light-text-color;
+		}
+	}
+
 	&__HeaderMenu {
 		position: absolute;
 		bottom: 0;
@@ -93,8 +107,6 @@
 		position: relative;
 		margin: 0px 1.5vw 0px 1.5vw;
 		padding: 15px 1vw 8px 1vw;
-		color: $menu-item-color;
-		transition: color $menu-transition-time ease-in-out;
 
 		&::before {
 			content: '';
@@ -114,25 +126,44 @@
 			opacity: 1;
 		}
 
-		&--active,
-		&:hover {
+		&--active {
 			color: $light-text-color;
 		}
 	}
 
-	&__Content {
+	&__ContentContainer {
+		position: relative;
 		font-size: 19px;
 		line-height: 1.6;
 		color: $content-color;
 		background-color: $content-bg-color;
 		padding: $content-vertical-padding $content-horizontal-padding;
+	}
 
-		> * {
-			max-width: $max-content-width;
-			margin-left: auto;
-			margin-right: auto;
+	&__ContentLoading {
+		position: absolute;
+		width: 100%;
+		max-width: $max-content-width;
+		left: 50%;
+		top: 40px;
+		transform: translateX(-50%);
+		animation: contentTextLoadingAppear $page-content-transition-away-time linear $page-content-transition-away-time;
+		animation-fill-mode: both;
+		pointer-events: none;
+	}
+
+	&__Content {
+		max-width: $max-content-width;
+		margin-left: auto;
+		margin-right: auto;
+		opacity: 1;
+		transition: opacity $page-content-transition-away-time linear;
+
+		&--loading {
+			opacity: 0;
+			pointer-events: none;
 		}
-
+		
 		h1, h2, h3, h4, h5 {
 			font-family: 'Lato', sans-serif;
 			margin: 0px;

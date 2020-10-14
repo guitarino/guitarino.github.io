@@ -6,8 +6,8 @@ export const title = 'Kirill Shestakov - Blog';
 
 export const menu = 'blog';
 
-export default function Blog() {
-	return <div class="Blog">
+export default function Blog(props: { class?: string }) {
+	return <div class={`Blog ${props.class || ``}`}>
 		<h1>Web Development</h1>
 		<div class="Blog__Posts">
 			<Link class="Blog__Post" href="/blog/accessor-pattern/">

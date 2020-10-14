@@ -5,8 +5,8 @@ export const title = 'Kirill Shestakov - Portfolio - NETGEAR Software Developer'
 
 export const menu = 'portfolio';
 
-export default function PortfolioNetgear() {
-	return <div class="PortfolioNetgear">
+export default function PortfolioNetgear(props: { class?: string }) {
+	return <div class={`PortfolioNetgear ${props.class || ``}`}>
 		<h1>NETGEAR Software Developer</h1>
 		<h2>NETGEAR Mobile</h2>
 		<p>

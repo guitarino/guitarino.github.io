@@ -5,7 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokaiSublime } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default function Markdown(props: any) {
-	return <MarkdownLibrary {...props} class='Markdown' options={{
+	return <MarkdownLibrary {...props} class={`Markdown ${props.class || ``}`} options={{
 		overrides: {
 			a: Link,
 			pre: Fragment,

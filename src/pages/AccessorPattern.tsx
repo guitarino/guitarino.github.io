@@ -6,8 +6,8 @@ export const title = 'You Can Create Private Properties In JS - Kirill Shestakov
 
 export const menu = 'blog';
 
-export default function AccessorPattern() {
-	return <Markdown>
+export default function AccessorPattern(props: { class?: string }) {
+	return <Markdown class={`AccessorPattern ${props.class || ``}`}>
 		{content}
 	</Markdown>;
 }

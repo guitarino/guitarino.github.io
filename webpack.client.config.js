@@ -9,7 +9,7 @@ module.exports = function getWebpackConfig(htmlPlugins) {
 		entry: {
 			'main': './src/main-client.ts',
 		},
-		mode: 'development',
+		mode: 'production',
 		devtool: 'inline-source-map',
 		output: {
 			path: path.resolve(__dirname, '.build-client'),

@@ -173,9 +173,22 @@
 			> div,
 			> p {
 				margin-top: 0px;
-				margin-bottom: 0px;
-				padding-bottom: 20px;
+				margin-bottom: 20px;
 			}
+		}
+
+		pre {
+			margin: 0 -40px 20px -40px !important;
+			padding: 40px !important;
+			max-width: calc(100vw - 8px);
+		}
+
+		p > code {
+			background-color: rgba(0, 0, 0, 0.1);
+			display: inline;
+			padding: 0px 4px 0px 4px;
+			border-radius: 2px;
+			word-wrap: break-word;
 		}
 	}
 

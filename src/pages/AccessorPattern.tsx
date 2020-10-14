@@ -1,4 +1,4 @@
-import Markdown from 'markdown-to-jsx';
+import Markdown from '@components/Markdown';
 import { h } from 'preact';
 import content from '@content/AccessorPattern.md';
 

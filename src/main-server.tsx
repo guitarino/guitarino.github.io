@@ -20,7 +20,7 @@ export async function getHtmlPlugins(): Promise<HtmlWebpackPlugin[]> {
 		const { pageInfo, content } = await renderApp(url);
 		htmlPlugins.push(new HtmlWebpackPlugin({
 			title: pageInfo.title,
-			filename: `${url}/index.html`,
+			filename: `.${url}/index.html`,
 			favicon: './assets/favicon.ico',
 			mobile: true,
 			meta: {

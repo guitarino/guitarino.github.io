@@ -9,8 +9,6 @@ before_install:
   - cd ./.build-client/
   - mkdir ./blob/
   - mkdir ./portfolio/
-  - chmod +x ./blog/
-  - chmod +x ./portfolio/
   - cd ../
 
 install: yarn

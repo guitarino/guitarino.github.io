@@ -5,6 +5,24 @@
 	to { opacity: 1; }
 }
 
+@keyframes contentAppear {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@mixin header-shorter {
+	height: $header-height-shorter;
+
+	.Page__HeaderPhoto {
+		width: 120px;
+		height: 120px;
+	}
+
+	.Page__HeaderInfoContainer {
+		top: 0px;
+	}
+}
+
 .Page {
 	position: relative;
 	min-height: 100vh;
@@ -20,16 +38,11 @@
 		transition: height $header-transition-time ease-in-out;
 
 		&--shorter {
-			height: $header-height-shorter;
+			@include header-shorter;
+		}
 
-			.Page__HeaderPhoto {
-				width: 120px;
-				height: 120px;
-			}
-
-			.Page__HeaderInfoContainer {
-				transform: translateY(-50%) translateY(-20px);
-			}
+		@media only screen and (max-height: 400px) {
+			@include header-shorter;
 		}
 	}
 
@@ -45,13 +58,12 @@
 
 	&__HeaderInfoContainer {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%) translateY(-25px);
+		top: 60px;
 		left: 0;
 		width: 100%;
 		text-align: center;
 		padding: 10px;
-		transition: transform $header-transition-time linear;
+		transition: top $header-transition-time linear;
 	}
 
 	&__HeaderBanner {
@@ -131,13 +143,27 @@
 		}
 	}
 
+	&__ContentLoadingContainer {
+		position: relative;
+		overflow: visible;
+		height: 0px;
+		width: 100%;
+	}
+
 	&__ContentContainer {
 		position: relative;
-		font-size: 19px;
+		font-size: 18px;
 		line-height: 1.6;
 		color: $content-color;
 		background-color: $content-bg-color;
 		padding: $content-vertical-padding $content-horizontal-padding;
+		opacity: 1;
+		transition: opacity $page-content-transition-away-time linear;
+
+		&--loading {
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 
 	&__ContentLoading {
@@ -156,13 +182,7 @@
 		max-width: $max-content-width;
 		margin-left: auto;
 		margin-right: auto;
-		opacity: 1;
-		transition: opacity $page-content-transition-away-time linear;
-
-		&--loading {
-			opacity: 0;
-			pointer-events: none;
-		}
+		animation: contentAppear $page-content-transition-in-time linear;
 		
 		h1, h2, h3, h4, h5 {
 			font-family: 'Lato', sans-serif;
@@ -203,7 +223,7 @@
 		}
 
 		a {
-			color: #383548;
+			color: $theme-color;
 			font-weight: bold;
 		}
 

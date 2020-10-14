@@ -21,6 +21,7 @@ export default function App({ history, initPageInfo }: { history: History, initP
 	useEffect(() => {
 		return history.listen(async () => {
 			setLoading(true);
+			window.scrollTo({ top: 0, behavior: 'smooth' });
 			setPageInfo(await getPageInfo(history.location));
 			setLoading(false);
 		});

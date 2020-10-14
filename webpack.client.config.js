@@ -53,7 +53,7 @@ module.exports = function getWebpackConfig(htmlPlugins) {
 					use: 'raw-loader',
 				},
 				{
-					test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpg)$/,
+					test: /\.(woff|woff2|eot|ttf|otf|gif|svg|png|jpg|webm|mp4)$/,
 					use: 'file-loader',
 				},
 			]

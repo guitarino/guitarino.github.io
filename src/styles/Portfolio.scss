@@ -1,0 +1,141 @@
+@import "../styles-lib/vars.scss";
+
+.Portfolio {
+	position: relative;
+	margin-top: 20px;
+	padding-bottom: 0px;
+	
+	&__Description {
+		padding-top: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		ul {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	}
+
+	&__Point {
+		display: inline-block;
+		border: 2px solid $theme-color;
+		margin: 3px;
+		padding: 4px 6px 4px 6px;
+		border-radius: 10px;
+		font-weight: bold;
+	}
+	
+	&__Group {
+		padding-bottom: 40px;
+	}
+	
+	&__Title {
+		font-weight: bold;
+		color: $theme-color;
+
+		> * {
+			display: inline-block;
+			width: 100%;
+		}
+
+		a {
+			text-decoration: underline;
+			text-decoration-skip: ink;
+			text-decoration-color: currentColor;
+		}
+
+		.Portfolio__JobDate {
+			font-weight: normal;
+			font-size: 12pt;
+		}
+	}
+	
+	&__Separator {
+		height: 3px;
+		background-color: $theme-color;
+		margin-bottom: 20px;
+	}
+	
+	&__SeeMore {
+		font-weight: bold;
+		margin-top: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+		position: relative;
+		color: $content-bg-color;
+		background-color: $theme-color;
+	}
+	
+	@media only screen and (min-width: 550px) {
+		margin-bottom: 20px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 80px;
+			width: 3px;
+			height: 100%;
+			background-color: $theme-color;
+		}
+
+		&__Group:last-child {
+			padding-bottom: 0px;
+		}
+
+		&__Title {
+			width: 160px;
+			float: left;
+			text-align: center;
+			background-color: $content-bg-color;
+			position: relative;
+			
+			.Portfolio__JobDate {
+				margin-top: 10px;
+				white-space: nowrap;
+			}
+		}
+
+		&__Description {
+			overflow: auto;
+			padding-top: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		&__Separator,
+		&__SeeMore {
+			margin-left: 80px;
+			overflow: auto;
+		}
+	}
+}
+
+.Portfolio {
+	&__Grid {
+		display: block;
+
+		> div {
+			display: inline-block;
+			width: 50%;
+			padding: 40px;
+			text-align: center;
+
+			@media only screen and (max-width: 600px) {
+				padding: 20px;
+				width: 100%;
+			}
+		}
+
+		video, img {
+			max-width: 100%;
+		}
+	}
+
+	&__Image {
+		&--withBorder {
+			border: 1px solid $theme-color;
+		}
+	}
+}

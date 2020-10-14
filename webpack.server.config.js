@@ -57,9 +57,9 @@ module.exports = function getWebpackConfig() {
 					}
 				},
 				{
-					test: /\.(s[ac]ss|css)$/i,
+					test: /\.(s[ac]ss|css|gif|svg|png|jpg|webm|mp4)$/i,
 					use: [
-						'raw-loader',
+						'file-loader',
 					],
 				},
 				{

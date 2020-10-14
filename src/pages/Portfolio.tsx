@@ -1,5 +1,6 @@
 import Link from '@components/Link';
 import { h } from 'preact';
+import "@styles/Portfolio.scss";
 
 export const title = 'Kirill Shestakov - Portfolio';
 
@@ -68,13 +69,9 @@ export default function Portfolio(props: { class?: string }) {
 			<div class="Portfolio__Description">
 				<ul>
 					<li>
-						Technologies used: 
-						<strong>Git</strong>,
-						<strong>JavaScript</strong>,
-						<strong>NodeJS</strong>,
-						<strong>NPM</strong>,
-						<strong>Browserify</strong>,
-						<strong>UglifyJS</strong>
+						Technologies used: <strong>Git</strong>, <strong>JavaScript</strong>,{' '}
+						<strong>NodeJS</strong>, <strong>NPM</strong>,{' '}
+						<strong>Browserify</strong>, <strong>UglifyJS</strong>{' '}
 					</li>
 					<li>Created JS libraries for reactive JavaScript, HTML and CSS</li>
 					<li>Created a library for reactive and customizable Web Components</li>
@@ -90,14 +87,9 @@ export default function Portfolio(props: { class?: string }) {
 			<div class="Portfolio__Description">
 				<ul>
 					<li>
-						Technologies used: 
-						<strong>SVN</strong>,
-						<strong>HTML</strong>,
-						<strong>CSS</strong>,
-						<strong>JavaScript</strong>,
-						<strong>jQuery</strong>,
-						<strong>LESS</strong>,
-						<strong>Polymer</strong>
+						Technologies used: <strong>SVN</strong>, <strong>HTML</strong>,{' '}
+						<strong>CSS</strong>, <strong>JavaScript</strong>, <strong>jQuery</strong>,{' '}
+						<strong>LESS</strong>, <strong>Polymer</strong>
 					</li>
 					<li>Fixed bugs and refactored various Web UIs and a Hybrid App</li>
 					<li>Supervised and assisted co-op students, participated in code reviews</li>
@@ -119,13 +111,9 @@ export default function Portfolio(props: { class?: string }) {
 			<div class="Portfolio__Description">
 				<ul>
 					<li>
-						Technologies used: 
-						<strong>Git</strong>,
-						<strong>HTML</strong>,
-						<strong>CSS</strong>,
-						<strong>JavaScript</strong>,
-						<strong>ThreeJS</strong>,
-						<strong>jQuery</strong>
+						Technologies used: <strong>Git</strong>, <strong>HTML</strong>,{' '}
+						<strong>CSS</strong>, <strong>JavaScript</strong>,{' '}
+						<strong>ThreeJS</strong>, <strong>jQuery</strong>
 					</li>
 					<li>In a group of 5, implemented a Sensor System and a Mobile App</li>
 					<li>Created a Hybrid App for 3D sensor visualization</li>
@@ -145,8 +133,7 @@ export default function Portfolio(props: { class?: string }) {
 			<div class="Portfolio__Description">
 				<ul>
 					<li>
-						Technologies used: 
-						<strong>Java</strong>
+						Technologies used: <strong>Java</strong>
 					</li>
 					<li>Developed an Android App to take images with varied focal length</li>
 					<li>Created an evolution algorithm to align the images for focus stacking</li>
@@ -162,12 +149,8 @@ export default function Portfolio(props: { class?: string }) {
 			<div class="Portfolio__Description">
 				<ul>
 					<li>
-						Technologies used: 
-						<strong>HTML</strong>,
-						<strong>CSS</strong>,
-						<strong>JavaScript</strong>,
-						<strong>PHP</strong>,
-						<strong>MySQL</strong>
+						Technologies used: <strong>HTML</strong>, <strong>CSS</strong>,{' '}
+						<strong>JavaScript</strong>, <strong>PHP</strong>, <strong>MySQL</strong>
 					</li>
 					<li>Designed an intuitive web site for the students, parents and teachers</li>
 					<li>Created an online Content Management System for the web site</li>

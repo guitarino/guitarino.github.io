@@ -1,5 +1,12 @@
 import Link from '@components/Link';
 import { h } from 'preact';
+import "@styles/Portfolio.scss";
+import asset1 from "../../assets/portfolio/netgear/video.webm";
+import asset2 from "../../assets/portfolio/netgear/video.mp4";
+import asset3 from "../../assets/portfolio/netgear/1.png";
+import asset4 from "../../assets/portfolio/netgear/2.png";
+import asset5 from "../../assets/portfolio/netgear/3.png";
+import asset6 from "../../assets/portfolio/netgear/4.png";
 
 export const title = 'Kirill Shestakov - Portfolio - NETGEAR Software Developer';
 
@@ -16,24 +23,24 @@ export default function PortfolioNetgear(props: { class?: string }) {
 			responsibilities included implementing the majority of front-end views, user interactions, as well as internal logic
 			and data model of the app.
 		</p>
-		<div class="PortfolioNetgear__Grid">
+		<div class="Portfolio__Grid">
 			<div>
 				<video controls>
-					<source src="/portfolio/netgear/video.webm" type="video/webm" />
-					<source src="/portfolio/netgear/video.mp4" type="video/mp4" />
+					<source src={asset1} type="video/webm" />
+					<source src={asset2} type="video/mp4" />
 				</video>
 			</div>
 			<div>
-				<img class="PortfolioNetgear__Image--withBorder" src="/portfolio/netgear/1.png" />
+				<img class="Portfolio__Image Portfolio__Image--withBorder" src={asset3} />
 			</div>
 			<div>
-				<img class="PortfolioNetgear__Image--withBorder" src="/portfolio/netgear/2.png" />
+				<img class="Portfolio__Image Portfolio__Image--withBorder" src={asset4} />
 			</div>
 			<div>
-				<img class="PortfolioNetgear__Image--withBorder" src="/portfolio/netgear/3.png" />
+				<img class="Portfolio__Image Portfolio__Image--withBorder" src={asset5} />
 			</div>
 			<div>
-				<img class="PortfolioNetgear__Image--withBorder" src="/portfolio/netgear/4.png" />
+				<img class="Portfolio__Image Portfolio__Image--withBorder" src={asset6} />
 			</div>
 		</div>
 	</div>;

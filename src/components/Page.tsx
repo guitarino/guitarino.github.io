@@ -32,15 +32,17 @@ export default function Page({ activeMenu, pageComponent, isLoading }: PageProps
 				</Link>
 			</nav>
 		</div>
-		<div class="Page__ContentContainer">
-			<PageComponent class={`Page__Content ${isLoading ? `Page__Content--loading` : ``}`} />
-			{
-				isLoading &&
+		{
+			isLoading &&
+				<div class="Page__ContentLoadingContainer">
 					<div class="Page__ContentLoading">
 						<TextLoading />
 						<TextLoading />
 					</div>
-			}
+				</div>
+		}
+		<div class={`Page__ContentContainer ${isLoading ? `Page__ContentContainer--loading` : ``}`}>
+			<PageComponent class="Page__Content" />
 		</div>
 		<div class="Page__FooterSpacer"></div>
 		<div class="Page__Footer">

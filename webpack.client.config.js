@@ -74,7 +74,7 @@ module.exports = function getWebpackConfig(htmlPlugins) {
 			},
 		},
 		plugins: [
-			// new CleanWebpackPlugin(),
+			new CleanWebpackPlugin(),
 			...htmlPlugins,
 			new MiniCssExtractPlugin(),
 			new WebpackPwaManifest({

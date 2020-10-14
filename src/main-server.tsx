@@ -1,3 +1,4 @@
+import path from 'path';
 import render from 'preact-render-to-string';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { createMemoryHistory } from 'history';
@@ -20,7 +21,7 @@ export async function getHtmlPlugins(): Promise<HtmlWebpackPlugin[]> {
 		const { pageInfo, content } = await renderApp(url);
 		htmlPlugins.push(new HtmlWebpackPlugin({
 			title: pageInfo.title,
-			filename: `.${url}/index.html`,
+			filename: path.resolve(__dirname, `../.build-client/${url}/index.html`),
 			favicon: './assets/favicon.ico',
 			mobile: true,
 			meta: {

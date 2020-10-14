@@ -25,6 +25,9 @@ export default function App({ history, initPageInfo }: { history: History, initP
 			setLoading(false);
 		});
 	})
+	useEffect(() => {
+		document.title = pageInfo.title;
+	});
 	return <HistoryContext.Provider value={history}>
 		<Page
 			isLoading={isLoading}

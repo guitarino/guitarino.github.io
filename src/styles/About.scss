@@ -1,7 +1,58 @@
+$profile-icon-size: 40px;
+$profile-icon-padding: 8px;
+
 .About {
-	background: blue;
+	&__Profiles {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	&__ProfileContainer {
+		display: inline-block;
+		width: 50%;
+		position: relative;
+		height: $profile-icon-size + 2 * $profile-icon-padding;
+
+		@media only screen and (max-width: 400px) {
+			width: 100%;
+		}
+	}
+
+	&__ProfileIcon {
+		position: absolute;
+		top: $profile-icon-padding;
+		left: $profile-icon-padding;
+		width: $profile-icon-size;
+		height: $profile-icon-size;
+		background-image: url('../../assets/images/external-profiles.png');
+		background-size: 40px 200px;
+		background-repeat: no-repeat;
+
+		&--github {
+			background-position: 0px 0px;
+		}
+		
+		&--linkedin {
+			background-position: 0px -40px;
+		}
+		
+		&--medium {
+			background-position: 0px -80px;
+		}
+		
+		&--stackoverflow {
+			background-position: 0px -120px;
+		}
+		
+		&--devto {
+			background-position: 0px -160px;
+		}
+	}
 
 	&__ProfileName {
-		color: green;
+		position: absolute;
+		top: 50%;
+		left: $profile-icon-size + 2 * $profile-icon-padding;
+		transform: translateY(-50%);
 	}
 }

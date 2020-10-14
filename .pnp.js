@@ -56,6 +56,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-transform-dynamic-import-to-static", "npm:1.0.1"],
             ["clean-webpack-plugin", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:3.0.0"],
             ["css-loader", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:4.3.0"],
+            ["file-loader", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:6.1.1"],
             ["history", "npm:5.0.0"],
             ["html-webpack-plugin", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:4.5.0"],
             ["http-server", "npm:0.12.3"],
@@ -3829,6 +3830,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["file-loader", [
+        ["virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:6.1.1", {
+          "packageLocation": "./.yarn/$$virtual/file-loader-virtual-93eb63dde0/0/cache/file-loader-npm-6.1.1-5d725ae767-0272335818.zip/node_modules/file-loader/",
+          "packageDependencies": [
+            ["file-loader", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:6.1.1"],
+            ["@types/webpack", "npm:4.41.22"],
+            ["loader-utils", "npm:2.0.0"],
+            ["schema-utils", "npm:3.0.0"],
+            ["webpack", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:5.0.0"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["file-type", [
         ["npm:9.0.0", {
           "packageLocation": "./.yarn/cache/file-type-npm-9.0.0-e0f2c352e4-6b7992faaf.zip/node_modules/file-type/",
@@ -4105,6 +4123,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-transform-dynamic-import-to-static", "npm:1.0.1"],
             ["clean-webpack-plugin", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:3.0.0"],
             ["css-loader", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:4.3.0"],
+            ["file-loader", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:6.1.1"],
             ["history", "npm:5.0.0"],
             ["html-webpack-plugin", "virtual:1397f03205322f185e3c40a2a48114a2d0ec1927ce9eb03270ca721bcb44cc913eb4902f703bc1ba333d1e4b50f52f681063f3ef3a41b65b40077c9759878ba6#npm:4.5.0"],
             ["http-server", "npm:0.12.3"],

@@ -18,23 +18,23 @@ export default function About() {
 			You can find me on:
 		</p>
 		<div class="About__Profiles">
-			<Link href="https://github.com/guitarino/">
+			<Link class="About__ProfileContainer" href="https://github.com/guitarino/">
 				<span class="About__ProfileIcon About__ProfileIcon--github"></span>
 				<span class="About__ProfileName">GitHub</span>
 			</Link>
-			<Link href="https://linkedin.com/in/kirill-shestakov-54902b98/">
+			<Link class="About__ProfileContainer" href="https://linkedin.com/in/kirill-shestakov-54902b98/">
 				<span class="About__ProfileIcon About__ProfileIcon--linkedin"></span>
 				<span class="About__ProfileName">LinkedIn</span>
 			</Link>
-			<Link href="https://medium.com/@weberino/">
+			<Link class="About__ProfileContainer" href="https://medium.com/@weberino/">
 				<span class="About__ProfileIcon About__ProfileIcon--medium"></span>
 				<span class="About__ProfileName">Medium</span>
 			</Link>
-			<Link href="https://stackoverflow.com/users/7842231/guitarino">
+			<Link class="About__ProfileContainer" href="https://stackoverflow.com/users/7842231/guitarino">
 				<span class="About__ProfileIcon About__ProfileIcon--stackoverflow"></span>
 				<span class="About__ProfileName">Stack Overflow</span>
 			</Link>
-			<Link href="https://dev.to/guitarino/">
+			<Link class="About__ProfileContainer" href="https://dev.to/guitarino/">
 				<span class="About__ProfileIcon About__ProfileIcon--devto"></span>
 				<span class="About__ProfileName">Dev.to</span>
 			</Link>

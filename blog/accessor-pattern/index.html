@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><title>You Can Create Private Properties In JS - Kirill Shestakov</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-99339575-1', 'auto');
+			ga('send', 'pageview');</script><meta name="author" content="Kirill Shestakov"><meta name="theme-color" content="#383548"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link href="/styles.css" rel="stylesheet"><meta name="theme-color" content="#383548" /><link rel="manifest" href="/manifest.a361a3c307b5a05f283a9eda96e2634d.json" /></head><body><div id="root"><div class="Page"><div class="Page__Header Page__Header--shorter"><div class="Page__HeaderBanner"></div><div class="Page__HeaderOverlay"></div><div class="Page__HeaderInfoContainer"><div class="Page__HeaderPhoto"></div><div class="Page__HeaderName">Kirill Shestakov</div><div class="Page__HeaderDescription">Web Developer in Vancouver</div></div><nav class="Page__HeaderMenu"><a class="Page__MenuLink" href="/"><div class="Page__MenuItem">About</div></a><a class="Page__MenuLink" href="/blog/"><div class="Page__MenuItem Page__MenuItem--active">Blog</div></a><a class="Page__MenuLink" href="/portfolio/"><div class="Page__MenuItem">Portfolio</div></a></nav></div><div class="Page__ContentContainer"><div class="Markdown AccessorPattern Page__Content"><h1 id="you-can-create-private-properties-in-js">You Can Create Private Properties In JS</h1><p>It's very <a href="https://stackoverflow.com/questions/436120/javascript-accessing-private-member-variables-from-prototype-defined-functions/436147#436147" rel="noopener noreferrer" target="_blank">common</a> for JavaScript developers to claim that it's impossible to create truly encapsulated properties and methods on an object <strong>and use them on its prototype</strong>.</p><p>In ES6, there are a few ways of easily achieving private properties without memory leaks. For example, you could use a ES6 <strong>Symbol</strong>:</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #75715e;">// Closure</span><span>
+</span><span></span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> priv_prop = </span><span style="color: #e6db74;">Symbol</span><span>();
+</span><span>    </span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">this</span><span>[priv_prop] = </span><span style="color: #ae81ff;">200</span><span>;
+</span>    };
+<span>    SomeClass.prototype.test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>[priv_prop]);
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> SomeClass;
+</span>}();
+<span></span><span style="color: #f92672;">var</span><span> instance = </span><span style="color: #f92672;">new</span><span> SomeClass();
+</span><span>instance.test(); </span><span style="color: #75715e;">// `200` logged</span></code></pre><p>Alternatively, you could use a <strong>WeakMap</strong>:</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #75715e;">// Closure</span><span>
+</span><span></span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> priv_prop1 = </span><span style="color: #f92672;">new</span><span> </span><span style="color: #e6db74;">WeakMap</span><span>();
+</span><span>    </span><span style="color: #f92672;">var</span><span> priv_prop2 = </span><span style="color: #f92672;">new</span><span> </span><span style="color: #e6db74;">WeakMap</span><span>();
+</span><span>    </span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        priv_prop1.set(</span><span style="color: #e6db74;">this</span><span>, </span><span style="color: #ae81ff;">100</span><span>);
+</span><span>        priv_prop2.set(</span><span style="color: #e6db74;">this</span><span>, </span><span style="color: #ae81ff;">200</span><span>);
+</span>    };
+<span>    SomeClass.prototype.test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(priv_prop1.get(</span><span style="color: #e6db74;">this</span><span>));
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(priv_prop2.get(</span><span style="color: #e6db74;">this</span><span>));
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> SomeClass;
+</span>}();
+<span></span><span style="color: #f92672;">var</span><span> instance = </span><span style="color: #f92672;">new</span><span> SomeClass();
+</span><span>instance.test(); </span><span style="color: #75715e;">// `100` and `200` logged</span></code></pre><p>The problem with the <strong>Symbol</strong> method is that you can still access those properties using <code>Object.getOwnPropertySymbols</code>. In either case, you would likely have to include bulky polyfills in production code.</p><p>Prior to ES6, there was no <em>obvious</em> way to create private properties usable on prototype. The claim is that you either have to abandon the idea or use a memory leaky <strong>Map</strong> (alternatively, you could use 2 arrays). But what if I told you that there is actually a way to do this that is cross-browser, needs no polyfills or ES6, and doesn't produce memory leaks?</p><h2 id="the-idea">The idea</h2><p>I haven't seen this method used by anyone (<strong>EDIT</strong>: it was pointed out to me that I wasn't the first one to come up with this method. <strong><a href="https://medium.com/front-end-hacking/achieving-complete-data-encapsulation-in-javascript-5454a6b7410b" rel="noopener noreferrer" target="_blank">Read more here</a></strong>), so I'd like to call it an <strong>accessor pattern</strong>. The idea is to create a <em>closure</em>, create a <em>key</em> inside the closure and create a <em>storage for private properties</em> that can only be accessed if the correct key is provided. Here's how you would implement it:</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #75715e;">/* Here's how you can create truly private
+</span><span style="color: #75715e;">   properties in JS and use them on prototype */</span><span>
+</span>
+<span></span><span style="color: #75715e;">// Closure</span><span>
+</span><span></span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> key = {};
+</span>
+<span>    </span><span style="color: #f92672;">var</span><span> private = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #f92672;">var</span><span> obj = {};
+</span><span>        </span><span style="color: #f92672;">return</span><span> </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span style="color: #f8f8f2;" class="hljs-function">testkey</span><span class="hljs-function">) </span><span>{
+</span><span>            </span><span style="color: #f92672;">if</span><span>(key === testkey) </span><span style="color: #f92672;">return</span><span> obj;
+</span><span>            </span><span style="color: #75715e;">// If the user of the class tries to access private</span><span>
+</span><span>            </span><span style="color: #75715e;">// properties, they won't have the access to the `key`</span><span>
+</span><span>            </span><span style="color: #e6db74;">console</span><span>.error(</span><span style="color: #e6db74;">'Cannot access private properties'</span><span>);
+</span><span>            </span><span style="color: #f92672;">return</span><span> </span><span style="color: #ae81ff;">undefined</span><span>;
+</span>        };
+    };
+
+<span>    </span><span style="color: #f92672;">var</span><span> SomeClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._ = private(); </span><span style="color: #75715e;">// Creates a private object</span><span>
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._(key).priv_prop = </span><span style="color: #ae81ff;">200</span><span>; </span><span style="color: #75715e;">// this._(key) will return the private object</span><span>
+</span>    };
+
+<span>    SomeClass.prototype.test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>._(key).priv_prop); </span><span style="color: #75715e;">// Using property from prototype</span><span>
+</span>    };
+
+<span>    </span><span style="color: #f92672;">return</span><span> SomeClass;
+</span>}();
+
+<span></span><span style="color: #f92672;">var</span><span> instance = </span><span style="color: #f92672;">new</span><span> SomeClass();
+</span><span>instance.test(); </span><span style="color: #75715e;">// `200` logged</span><span>
+</span>
+<span></span><span style="color: #f92672;">var</span><span> wrong_key = {};
+</span><span>instance._(wrong_key); </span><span style="color: #75715e;">// undefined; error logged</span></code></pre><p>Pretty simple, huh? <code>private</code> function creates the <em>private storage</em> and returns a private access function that will only return the <em>storage</em> if the correct <em>key</em> is provided. Then, in constructor, we assign this private access function to <code>this._</code> which can be easily used on the prototype, provided that the prototype properties also have access to the <em>key</em>. Basically, there is no way to access the <em>private storage</em> without having the correct <em>key</em>. Hence, if the user tries to call <code>this._</code> with any argument, maybe with a <code>wrong_key</code>, then the attempt will fail, error will be logged, and all the user will get is undefined.</p><p>Advantages of this method:</p><ul><li>It's quite simple. All you need is to create a <em>private storage</em>, and you can access all private properties inline within a constructor / prototype.</li><li>It lets you create truly private properties that can be accessed from the prototype. The user of the class will not be able to access them.</li></ul><p>Disadvantage of this method:</p><ul><li>It slightly pollutes the namespace, because you have to assign the private storage to <code>this._</code> or alike, but there's probably no other way to do this.</li></ul><h2 id="a-problem">A problem</h2><p>A minor problem with this method is that, in case of prototypal inheritance, if both child and parent use the same property name for the private access function (in this example, <code>this._</code>), then the parent's private properties cannot be accessed within parent's prototype, because <code>this._</code> will refer to child's private access function. Here's what I mean,</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #75715e;">// Note: this Gist is to show a problem with accessor pattern</span><span>
+</span><span></span><span style="color: #75715e;">// and inheritance. Do not use!</span><span>
+</span>
+<span></span><span style="color: #f92672;">var</span><span> private = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span style="color: #f8f8f2;" class="hljs-function">key</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> obj = {};
+</span><span>    </span><span style="color: #f92672;">return</span><span> </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span style="color: #f8f8f2;" class="hljs-function">testkey</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #f92672;">if</span><span>(key === testkey) </span><span style="color: #f92672;">return</span><span> obj;
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.error(</span><span style="color: #e6db74;">'Cannot access private properties'</span><span>);
+</span><span>        </span><span style="color: #f92672;">return</span><span> </span><span style="color: #ae81ff;">undefined</span><span>;
+</span>    };
+};
+
+<span></span><span style="color: #f92672;">var</span><span> ParentClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> key = {};
+</span><span>    </span><span style="color: #f92672;">var</span><span> ParentClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._ = private(key);
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._(key).priv_prop = </span><span style="color: #ae81ff;">100</span><span>;
+</span>    };
+<span>    ParentClass.prototype.parent_test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>._(key).priv_prop);
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> ParentClass;
+</span>}();
+
+<span></span><span style="color: #f92672;">var</span><span> ChildClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> key = {};
+</span><span>    </span><span style="color: #f92672;">var</span><span> ChildClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        ParentClass.call(</span><span style="color: #e6db74;">this</span><span>);
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._ = private(key);
+</span><span>        </span><span style="color: #e6db74;">this</span><span>._(key).priv_prop = </span><span style="color: #ae81ff;">200</span><span>;
+</span>    };
+<span>    ChildClass.prototype = </span><span style="color: #e6db74;">Object</span><span>.create(
+</span>        ParentClass.prototype
+    );
+<span>    ChildClass.prototype.test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>._(key).priv_prop);
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> ChildClass;
+</span>}();
+
+<span></span><span style="color: #f92672;">var</span><span> instance = </span><span style="color: #f92672;">new</span><span> ChildClass();
+</span><span>instance.test(); </span><span style="color: #75715e;">// `200` is correctly logged</span><span>
+</span><span>instance.parent_test(); </span><span style="color: #75715e;">// ERROR! (expected result: `100`)</span></code></pre><p>When <code>instance.parent_test</code> is called, <code>this._</code> inside it will refer to the child's private access function, hence, the <code>key</code> will mismatch and the error will be logged. However, this problem can be quite easily solved.</p><h2 id="the-final-solution">The final solution</h2><p>The best solution is to namespace and make sure that parent and child have different property names for their private access functions. Here's the final solution:</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #75715e;">/* Here's how you can create truly private
+</span><span style="color: #75715e;">   properties in JS and use them on prototype */</span><span>
+</span>
+<span></span><span style="color: #75715e;">// Creates private storage, secures with a key, and</span><span>
+</span><span></span><span style="color: #75715e;">// returns a private access function</span><span>
+</span><span></span><span style="color: #f92672;">var</span><span> private = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span style="color: #f8f8f2;" class="hljs-function">key</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> obj = {};
+</span><span>    </span><span style="color: #f92672;">return</span><span> </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span style="color: #f8f8f2;" class="hljs-function">testkey</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #f92672;">if</span><span>(key === testkey) </span><span style="color: #f92672;">return</span><span> obj;
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.error(</span><span style="color: #e6db74;">'Cannot access private properties'</span><span>);
+</span><span>        </span><span style="color: #f92672;">return</span><span> </span><span style="color: #ae81ff;">undefined</span><span>;
+</span>    };
+};
+
+<span></span><span style="color: #75715e;">// Create closure</span><span>
+</span><span></span><span style="color: #f92672;">var</span><span> ParentClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> priv = </span><span style="color: #e6db74;">'_ParentClass'</span><span> + </span><span style="color: #e6db74;">Math</span><span>.random(); </span><span style="color: #75715e;">// Namespace</span><span>
+</span><span>    </span><span style="color: #f92672;">var</span><span> key = {}; </span><span style="color: #75715e;">// Create key withing closure</span><span>
+</span><span>    </span><span style="color: #f92672;">var</span><span> ParentClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">this</span><span>[priv] = private(key); </span><span style="color: #75715e;">// Create private storage</span><span>
+</span><span>        </span><span style="color: #e6db74;">this</span><span>[priv](key).priv_prop = </span><span style="color: #ae81ff;">100</span><span>; </span><span style="color: #75715e;">// Modify any private data</span><span>
+</span>    };
+<span>    ParentClass.prototype.parent_test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>[priv](key).priv_prop); </span><span style="color: #75715e;">// Access private data</span><span>
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> ParentClass;
+</span>}();
+
+<span></span><span style="color: #f92672;">var</span><span> ChildClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>    </span><span style="color: #f92672;">var</span><span> priv = </span><span style="color: #e6db74;">'_ChildClass'</span><span> + </span><span style="color: #e6db74;">Math</span><span>.random();
+</span><span>    </span><span style="color: #f92672;">var</span><span> key = {};
+</span><span>    </span><span style="color: #f92672;">var</span><span> ChildClass = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        ParentClass.call(</span><span style="color: #e6db74;">this</span><span>);
+</span><span>        </span><span style="color: #e6db74;">this</span><span>[priv] = private(key);
+</span><span>        </span><span style="color: #e6db74;">this</span><span>[priv](key).priv_prop = </span><span style="color: #ae81ff;">200</span><span>;
+</span>    };
+<span>    ChildClass.prototype = </span><span style="color: #e6db74;">Object</span><span>.create(
+</span>        ParentClass.prototype
+    );
+<span>    ChildClass.prototype.test = </span><span style="color: #f92672;" class="hljs-function">function</span><span class="hljs-function">(</span><span class="hljs-function">) </span><span>{
+</span><span>        </span><span style="color: #e6db74;">console</span><span>.log(</span><span style="color: #e6db74;">this</span><span>[priv](key).priv_prop);
+</span>    };
+<span>    </span><span style="color: #f92672;">return</span><span> ChildClass;
+</span>}();
+
+<span></span><span style="color: #f92672;">var</span><span> instance = </span><span style="color: #f92672;">new</span><span> ChildClass();
+</span><span>instance.test(); </span><span style="color: #75715e;">// `200` logged, as expected</span><span>
+</span><span>instance.parent_test(); </span><span style="color: #75715e;">// `100` logged, as expected</span><span>
+</span>
+<span></span><span style="color: #75715e;">// Yet, there's no way to access the property from outside of the closure</span></code></pre><p>Pretty much the only difference from the previous code snippet is that we replaced <code>this._</code> for both child and parent classes with <code>this[priv]</code>, where <code>priv</code> is namespaced and randomly generated to ensure that private access function is stored under a different property name for child and parent.</p><p>Another recommendation I can make is that you should probably secure <code>this[priv]</code> by making it non-configurable, non-enumerable and read-only:</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #e6db74;">Object</span><span>.defineProperty(</span><span style="color: #e6db74;">this</span><span>, priv, {
+</span><span>    </span><span style="color: #f92672;">value</span><span>: private(key)
+</span>})
+</code></pre><p>Instead of just</p><pre class="lang-javascript" style="display: block; overflow-x: auto; padding: 0.5em; background: #23241f; color: #f8f8f2;"><code style="white-space: pre;" class="language-javascript"><span style="color: #e6db74;">this</span><span>[priv] = private(key)</span></code></pre><p>This will make sure that user will not be able to remove or modify <code>this[priv]</code>, which is crucial for correct private storage functioning.</p><h2 id="conclusion">Conclusion</h2><p>Go ahead and use <strong>accessor pattern</strong>! It allows you to create truly encapsulated properties and use them on a prototype. Let others know about this method so we don't continue the misconception that privacy is impossible to achieve in JavaScript. Sharing this article will also help <strong>😊</strong></p></div></div><div class="Page__FooterSpacer"></div><div class="Page__Footer"><div class="Page__FooterContent">© Copyright 2020 Kirill Shestakov</div></div></div></div><script src="/main.js"></script></body></html>

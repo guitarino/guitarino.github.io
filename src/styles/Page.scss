@@ -109,10 +109,10 @@
 		color: $content-color;
 		font-size: 19px;
 		background-color: $content-bg-color;
-		padding: 20px 36px;
+		padding: $content-vertical-padding $content-horizontal-padding;
 
 		> * {
-			max-width: 818px;
+			max-width: $max-content-width;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -155,17 +155,15 @@
 			padding-bottom: 20px;
 		}
 
-		a, a:hover, a:focus, a:active {
+		a {
 			color: #383548;
 			font-weight: bold;
 		}
 
-		p {
-			a, a:hover, a:focus, a:active {
-				text-decoration: underline;
-				text-decoration-skip: ink;
-				text-decoration-color: currentColor;
-			}
+		p a {
+			text-decoration: underline;
+			text-decoration-skip: ink;
+			text-decoration-color: currentColor;
 		}
 
 		> * {

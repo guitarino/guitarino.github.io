@@ -3,8 +3,22 @@ const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = function getWebpackConfig(htmlPlugins) {
+module.exports = function getWebpackConfig(pluginInfos) {
+	const htmlPlugins = pluginInfos.map(({ title, url, content }) => new HtmlWebpackPlugin({
+		title: title,
+		filename: `.${url}/index.html`,
+		favicon: './assets/favicon.ico',
+		mobile: true,
+		meta: {
+			'author': 'Kirill Shestakov',
+			'theme-color': '#383548',
+		},
+		templateParameters: {
+			content,
+		},
+	}));
 	return {
 		entry: {
 			'main': './src/main-client.ts',

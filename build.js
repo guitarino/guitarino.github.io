@@ -36,9 +36,9 @@ webpack(configs.getServer(), (err, stats) => {
 	console.log('</Server side>');
 
 	console.log('<Require />');
-	const { getHtmlPlugins } = require('./.build-server/main');
+	const { getPlufinInfos } = require('./.build-server/main');
 
-	getHtmlPlugins().then(plugins => {
+	getPlufinInfos().then(plugins => {
 		webpack(configs.getClient(plugins), (err, stats) => {
 			logErrors(err, stats);
 

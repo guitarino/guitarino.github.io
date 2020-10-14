@@ -1,6 +1,4 @@
-import path from 'path';
 import render from 'preact-render-to-string';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { createMemoryHistory } from 'history';
 import App from '@components/App';
 import { h } from 'preact';
@@ -14,26 +12,17 @@ async function renderApp(url: string) {
 	return { pageInfo, content };
 }
 
-export async function getHtmlPlugins(): Promise<HtmlWebpackPlugin[]> {
-	const htmlPlugins: HtmlWebpackPlugin[] = [];
+export async function getPlufinInfos() {
+	const pluginInfos: any[] = [];
 
 	for (const url in pages) {
 		const { pageInfo, content } = await renderApp(url);
-		htmlPlugins.push(new HtmlWebpackPlugin({
+		pluginInfos.push({
 			title: pageInfo.title,
-			filename: `${url}/index.html`,
-			favicon: './assets/favicon.ico',
-			mobile: true,
-			meta: {
-				'author': 'Kirill Shestakov',
-				'theme-color': '#383548',
-			},
-			templateParameters: {
-				content,
-			},
-		}));
+			url,
+			content,
+		});
 	}
 
-	return htmlPlugins;
+	return pluginInfos;
 }
-

@@ -1,23 +1,19 @@
 @import "../styles-lib/vars.scss";
 
 .Blog {
-	&__Posts {
-		text-align: center;
+	text-align: center;
+
+	&__Content {
+		display: inline-block;
+		text-align: left;
 	}
 
 	&__Post {
-		display: inline-block;
-		width: 50%;
-		text-align: left;
-		padding: 0px 40px 20px 0px;
+		display: block;
+		padding: 0px 0px 20px 0px;
 
 		&#{&} {
 			font-weight: normal;
-		}
-
-		@media screen and (max-width: $max-content-width + 2 * $content-horizontal-padding) {
-			padding: 0px 0px 20px 0px;
-			width: 100%;
 		}
 	}
 

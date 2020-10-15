@@ -195,7 +195,6 @@
 			font-size: 30px;
 			padding-top: 16px;
 			padding-bottom: 20px;
-			text-align: center;
 		}
 
 		h2 {
@@ -255,6 +254,13 @@
 			padding: 0px 4px 0px 4px;
 			border-radius: 2px;
 			word-wrap: break-word;
+		}
+
+		blockquote {
+			background: rgba(56, 53, 72, 0.08);
+			margin: 0px;
+			padding: 30px;
+			border-radius: 4px;
 		}
 	}
 

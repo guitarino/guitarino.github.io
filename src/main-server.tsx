@@ -12,7 +12,7 @@ async function renderApp(url: string) {
 	return { pageInfo, content };
 }
 
-export async function getPlufinInfos() {
+export async function getPluginInfos() {
 	const pluginInfos: any[] = [];
 
 	for (const url in pages) {

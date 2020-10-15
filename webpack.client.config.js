@@ -6,19 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function getWebpackConfig(pluginInfos) {
-	const htmlPlugins = pluginInfos.map(({ title, url, content }) => new HtmlWebpackPlugin({
-		title: title,
-		filename: `.${url}/index.html`,
-		favicon: './assets/favicon.ico',
-		mobile: true,
-		meta: {
-			'author': 'Kirill Shestakov',
-			'theme-color': '#383548',
-		},
-		templateParameters: {
-			content,
-		},
-	}));
 	return {
 		entry: {
 			'main': './src/main-client.ts',
@@ -89,7 +76,19 @@ module.exports = function getWebpackConfig(pluginInfos) {
 		},
 		plugins: [
 			new CleanWebpackPlugin(),
-			...htmlPlugins,
+			...pluginInfos.map(({ title, url, content }) => new HtmlWebpackPlugin({
+				title: title,
+				filename: `.${url}/index.html`,
+				favicon: './assets/favicon.ico',
+				mobile: true,
+				meta: {
+					'author': 'Kirill Shestakov',
+					'theme-color': '#383548',
+				},
+				templateParameters: {
+					content,
+				},
+			})),
 			new MiniCssExtractPlugin(),
 			new WebpackPwaManifest({
 				"name": "Kirill Shestakov - Full Stack Developer",

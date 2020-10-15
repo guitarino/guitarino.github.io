@@ -25,7 +25,7 @@ export default function Page({ activeMenu, pageComponent, isLoading }: PageProps
 					<div class={`Page__MenuItem ${activeMenu === 'about' ? `Page__MenuItem--active` : ``}`}>About</div>
 				</Link>
 				<Link class="Page__MenuLink" href="/blog/">
-					<div class={`Page__MenuItem ${activeMenu === 'blog' ? `Page__MenuItem--active` : ``}`}>Blog</div>
+					<div class={`Page__MenuItem ${activeMenu === 'blog' ? `Page__MenuItem--active` : ``}`}>Writing</div>
 				</Link>
 				<Link class="Page__MenuLink" href="/portfolio/">
 					<div class={`Page__MenuItem ${activeMenu === 'portfolio' ? `Page__MenuItem--active` : ``}`}>Portfolio</div>

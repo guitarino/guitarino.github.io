@@ -13,33 +13,33 @@ Lilly walked up to me and said in a completely relaxed voice, a voice so relaxed
 > Behind you, a desert. Ahead, the boundless love.  
 > Though scared of awesome presence, you raise your voice above.  
 > "God, I have come from very far, and I am tired so.  
->  I stand before you, brightest star, with thirst to only know  
->  One simple answer, my omniscient seer,  
->  O ever-dancing dancer, **Why am I here?**"  
+> I stand before you, brightest star, with thirst to only know  
+> One simple answer, my omniscient seer,  
+> O ever-dancing dancer, **Why am I here?**"  
 > "You don't remember anymore", reply came from the light.  
 > "How stood you here aeons before, repeating the same plight.  
->  You were a loving mother and her precious child.  
->  By a wooden crib, you stood as father and gently smiled.  
->  You were a mighty tree that grew in rainy and in sunny.  
->  You were a busy bee obsessed with sweetest honey.  
->  You were a mountain with a shiny peak.  
->  You were a lily flower growing by a tiny creek.  
->  You were the one you wanted with your entire heart.  
->  And the one you'd rather keep far away apart.  
->  In all your crimes, your only victim and your own judge.  
->  Remorseful countless times, but others - wouldn't budge.  
->  You walked quadrillion of miles, as homeless and from home,  
->  Through suffering and trials, as formless and as form.  
->  You are the book that tears its own pages.  
->  Experiences loved into life and lost to ages.  
->  Now stood in front of love itself, the creator of abodes,  
->  What would you do to learn yourself, what truth the world holds?"  
+> You were a loving mother and her precious child.  
+> By a wooden crib, you stood as father and gently smiled.  
+> You were a mighty tree that grew in rainy and in sunny.  
+> You were a busy bee obsessed with making sweetest honey.  
+> You were a mountain with a shiny peak.  
+> You were a lily flower growing by a tiny creek.  
+> You were the one you wanted with your entire heart.  
+> And the one you'd rather keep far away apart.  
+> In all your crimes, your only victim and your own judge.  
+> Remorseful countless times, but others - wouldn't budge.  
+> You walked quadrillion of miles, as homeless and from home,  
+> Through suffering and trials, as formless and as form.  
+> You are the book that tears its own pages.  
+> You are the experience loved into life and lost to ages.  
+> Now stood in front of love itself, the creator of abodes,  
+> What would you do to learn yourself, the truth the world holds?"  
 > "Anything," you replied, your voice echoing throughout.  
 > "And so begins another stride, another journey on a thorny route.  
->  Why are you here, you ask? Truth is seeking for its own answer.  
->  Look deep behind your mask, and find the ever-dancing dancer.  
->  Look in the seen to find the seen, and in the heard to find the heard.  
->  Look for the balance, not extreme, for truth, and not a word."
+> Why are you here, you ask? Truth is seeking for its own answer.  
+> Look deep behind your mask, and find the ever-dancing dancer.  
+> Look in the seen to find the seen, and in the heard to find the heard.  
+> Look for the balance, not extreme, for truth, and not a word."
 
 Puzzled, I stood up. I didn't understand. But I wanted to keep it. I wanted to memorize it, and think about it. I wanted to think about it, over and over, over and over. I want to remember it, forever. I want to understand, why am I here? What was the point of it all? What does it all mean? Have I walked a quadrillion miles? Am I the same as everyone, and how? I'm going to die soon, like everybody else. But if I could take anything with me when I die, it would be this page, this piece of paper, and whatever is on it.
 

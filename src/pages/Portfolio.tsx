@@ -13,8 +13,8 @@ export default function Portfolio(props: { class?: string }) {
 				Profile
 			</div>
 			<div class="Portfolio__Description">
-				Creative and highly experienced Intermediate Level Web Developer with a diverse programming skillset
-				and a strong ability to adapt to new technologies. Passionate about creating stellar user experiences
+				Creative and highly experienced Full Stack Web Developer with a diverse programming skill set and
+				a strong ability to adapt to new technologies. Passionate about creating stellar user experiences
 				while producing high quality maintainable code. Dependable team player and enthusiastic motivator.
 			</div>
 		</div>
@@ -26,21 +26,17 @@ export default function Portfolio(props: { class?: string }) {
 				<span class="Portfolio__Point">HTML5</span>
 				<span class="Portfolio__Point">CSS3</span>
 				<span class="Portfolio__Point">JavaScript</span>
-				<span class="Portfolio__Point">jQuery</span>
-				<span class="Portfolio__Point">ThreeJS</span>
-				<span class="Portfolio__Point">Polymer</span>
-				<span class="Portfolio__Point">Web Components</span>
-				<span class="Portfolio__Point">NodeJS</span>
-				<span class="Portfolio__Point">Mocha</span>
-				<span class="Portfolio__Point">SVN</span>
-				<span class="Portfolio__Point">Git</span>
-				<span class="Portfolio__Point">ExpressJS</span>
-				<span class="Portfolio__Point">PHP</span>
-				<span class="Portfolio__Point">MySQL</span>
+				<span class="Portfolio__Point">React</span>
+				<span class="Portfolio__Point">Redux</span>
+				<span class="Portfolio__Point">Node.js</span>
+				<span class="Portfolio__Point">Electron.js</span>
+				<span class="Portfolio__Point">Webpack</span>
+				<span class="Portfolio__Point">Babel</span>
 				<span class="Portfolio__Point">Java</span>
 				<span class="Portfolio__Point">C#</span>
-				<span class="Portfolio__Point">C++</span>
-				<span class="Portfolio__Point">Python</span>
+				<span class="Portfolio__Point">.NET Framework</span>
+				<span class="Portfolio__Point">SQL</span>
+				<span class="Portfolio__Point">Git</span>
 			</div>
 		</div>
 		<div class="Portfolio__Group">
@@ -49,7 +45,7 @@ export default function Portfolio(props: { class?: string }) {
 			</div>
 			<div class="Portfolio__Description">
 				<ul>
-					<li>Cross-browser Web Development</li>
+					<li>Cross-browser Full Stack Web Development</li>
 					<li>Object-oriented programming and best practices</li>
 					<li>CSS3 transitions and animations</li>
 					<li>Creating interactive UI elements</li>
@@ -63,7 +59,9 @@ export default function Portfolio(props: { class?: string }) {
 		<div class="Portfolio__Separator"></div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
-				<span class="Portfolio__JobTitle"><Link href="https://github.com/guitarino/">Open Source Developer</Link></span>
+				<span class="Portfolio__JobTitle">
+					<Link href="https://github.com/guitarino/">Open Source Developer</Link>
+				</span>
 				<span class="Portfolio__JobDate">Dec 2016 - present</span>
 			</div>
 			<div class="Portfolio__Description">

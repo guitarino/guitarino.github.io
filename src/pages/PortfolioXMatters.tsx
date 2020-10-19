@@ -31,8 +31,8 @@ export const title = 'Kirill Shestakov - Portfolio - UI Developer - xMatters, In
 
 export const menu = 'portfolio';
 
-export default function PortfolioCollabware(props: { class?: string }) {
-	return <div class={`PortfolioCollabware ${props.class || ``}`}>
+export default function PortfolioXMatters(props: { class?: string }) {
+	return <div class={`PortfolioXMatters ${props.class || ``}`}>
 		<h1>UI Developer - xMatters, Inc.</h1>
 		<p>
 			<Link href="https://www.xmatters.com/">xMatters</Link> is a cloud-based IT event management

@@ -11,9 +11,9 @@ export default function About(props: { class?: string }) {
 		<h1>About me</h1>
 		<p>
 			My name is Kirill and I am a Web Developer living in Vancouver.
-			I love the <Link href="https://www.w3.org/wiki/Open_Web_Platform">Open Web</Link> and
-			enjoy creating Open Source projects. I actively participate in the developer community by
-			helping others on Stack Overflow and Reddit and by writing articles about Web Development.
+			I love the <strong>Open Web</strong> and enjoy creating Open Source projects.
+			I actively participate in the developer community by helping others on Stack
+			Overflow and Redditand by writing articles about Web Development.
 			Feel free to check out my <Link href="/blog/">Blog</Link> and <Link href="/portfolio/">Portfolio</Link>.
 			You can find me on:
 		</p>

@@ -58,15 +58,15 @@ After jumping up from the bench he was sitting on, he faced the nurse that came 
 
 Jim took off his brown jacket and his winter hat. He now had a bristle, no longer had any piercing, and his hair seemed to have lost any resemblance of structure. As he walked towards his room, the noise of a conversation grew louder and louder.
 
-"Look, Linda, it's hovering to the south!" said a deep voice of a man.
+"Look, Linda, it's hovering to the south!" said a man with a deep voice.
 
-"Let's keep quiet, maybe it won't notice us. The bushy meadow to the right looks good, Marcus", whispered a woman.
+"Let's keep quiet, maybe it won't notice us. The bushy meadow to the right looks good, Marcus," whispered a woman.
 
 "Could be a good hideout, let's go. I swear this goddamn dragon can smell us!" responded the man.
 
-Jim's mother asked from another room, "What's been happening in your room? I keep hearing voices coming from there, and it's been bugging me all day!".
+Jim's mother asked from another room, "What's been happening in your room, Jimmy? I keep hearing voices coming from there, and it's been bugging me all day!"
 
-"Not now, mom, I gotta help them", replied Jim.
+"Not now, mom, I gotta help them," replied Jim.
 
 Jim quickly unlocked the door, and a growl of a dragon filled the whole apartment. Jim jumped over the many wires and computer parts lying on the ground and quickly took his virtual reality goggles. His mom impatiently entered his room, and Jim said, "Just don't step on the wires!" as he put his goggles on.
 
@@ -90,17 +90,17 @@ Jim pointed his free hand on the dragon and let out a magical spell that totally
 
 "Son of the undead!" shouted Marcus.
 
-"Hey y'all"
+"Hey y'all!"
 
 "Jim, if ripping the head from one dragon takes you one minute, what secret mission are you doing for, like, eight hours each day, huh?" said Marcus.
 
-"I'll take that as a thank you", replied Jim.
+"I'll take that as a thank you," replied Jim.
 
 "Mr. Grim, the necklace you got me really helped with my freezing spells! Did you see that bastard's wing?" exclaimed Linda.
 
 They all caught their breath. Linda and Marcus stood beside the dragon's bloody head. Linda started collecting the still-pouring dragon's blood into a vial. After Marcus shook off the dirt and ashes from his armor, Jim put his hands on Marcus's wounds and started chanting a spell to heal them.
 
-"Buddy, we can make money off of dragon's meat! Just sell 'em slices, since you seem like a qualified butcher." started Marcus, "Or, we can come up with some fine recipes! I'm thinking... a sweetroll with dragon chunks", continued Marcus, followed by laughter from his friends. "Hear me out, I've got a pitch too!"
+"Buddy, we can make money off of dragon's meat! Just sell 'em slices, since you seem like a qualified butcher." started Marcus, "Or, we can come up with some fine recipes! I'm thinking... a sweetroll with dragon chunks," continued Marcus, followed by laughter from his friends. "Hear me out, I've got a pitch too!"
 
 > Who stole your sweetroll?  
 > Not a rat and not a troll?  
@@ -113,7 +113,7 @@ They all caught their breath. Linda and Marcus stood beside the dragon's bloody 
 
 "Jim, that man tells me his career as a bard is over. I'm telling you, Marcus, you will be famous for your poems, not your adventures!" laughed Linda.
 
-"You know, Marcus, if a creature takes out your tongue, I'm gonna miss your songs the most." Jim finished casting his spell and let out a deep breath, "It was a great work, you guys, and we can joke around forever, but, um... I gotta go now. I'll try to find you in a couple of hours", said Jim.
+"You know, Marcus, if a creature takes out your tongue, I'm gonna miss your songs the most." Jim finished casting his spell and let out a deep breath, "It was a great work, you guys, and we can joke around forever, but, um... I gotta go now. I'll try to find you in a couple of hours," said Jim.
 
 In order not to scare his friends by a sudden disappearance, he first chanted an invisibility spell on himself, then quickly exited the game.
 
@@ -121,21 +121,21 @@ In order not to scare his friends by a sudden disappearance, he first chanted an
 
 "What a mystery man! Appears to help, then disappears just as quickly! Maybe he just didn't like my recipe idea?" said Marcus.
 
-"It was the most hilarious idea" said Linda while sheathing her bloodied dagger behind her back.
+"It was the most hilarious idea," said Linda while sheathing her bloodied dagger behind her back.
 
 "You think that was hilarious? Wait till you hear my other food ideas. First, you've been collecting lots of dragon blood, and I think it's about time we make a soup with it. Then, ..." Jim turned down the volume of the speakers after taking off his goggles. His mom stood in awe and couldn't comprehend what was happening.
 
-"Sorry, mom, I forgot to turn down the volume today", said Jim. "Sorry it was loud the whole day".
+"Sorry, mom, I forgot to turn down the volume today," said Jim. "Sorry it was loud the whole day."
 
 "Who are these people?.. Are they your friends? Are you playing with them online?" asked his mom.
 
-"Yes, they're my friends. And no... they're not online. I... um... created them. They're kind of... virtual"
+"Yes, they're my friends. And no... they're not online. I... um... created them. They're kind of... virtual."
 
 "What? How do you mean? How did you make them?"
 
-"See, around 5 months ago, around the time of... you know" sighed Jim
+"See, around 5 months ago, around the time of... you know..." sighed Jim
 
-"I know" his mom responded.
+"I know," his mom responded.
 
 "Yeah, at around that time, I realized how to make a sort of a... brain inside a computer... and I hooked it up to the game my company is developing. It's all rather technical, but in simpler words, I kind of made characters, and, well, the whole game... sentient. That's why it looks so realistic, and the characters behave real, do things, talk, joke around."
 
@@ -145,13 +145,13 @@ In order not to scare his friends by a sudden disappearance, he first chanted an
 
 "But is that ethical? To keep them, you know, in that box... in your computer? What if you... turn it off?"
 
-"It's alright, they're in a cloud, they won't die if I turn off my computer! Well, even if the cloud was turned off... I suppose, it would be similar to... what happened to Pam" said Jim, sighed and looked down and to a side.
+"It's alright, they're in a cloud, they won't die if I turn off my computer! Well, even if the cloud was turned off... I suppose, it would be similar to... what happened to Pam," said Jim, sighed and looked down and to a side.
 
 "Sorry Jimmy... Did the doctors say anything different today?"
 
 Jim sat on his couch, and his eyes started to tear up.
 
-"Her brain activity is a bit different each day, which means that she's still there. But, it's not getting stronger, and she can't get out", said Jim, and, after a pause, started mumbling with tears running down his cheeks, "I feel guilty for what happened. I was driving that day, and... maybe if I slept better, I'd be more careful, and she wouldn't be there... on the hospital bed... I miss her so much..."
+"Her brain activity is a bit different each day, which means that she's still there. But, it's not getting stronger, and she can't get out," said Jim, and, after a pause, started mumbling with tears running down his cheeks, "I feel guilty for what happened. I was driving that day, and... maybe if I slept better, I'd be more careful, and she wouldn't be there... on the hospital bed... I miss her so much..."
 
 "You know it wasn't your fault, Jim, we talked about it a million times." and, after a brief pause, added, "Let's have dinner, it'll make you feel better."
 
@@ -205,7 +205,7 @@ Exactly three weeks into his experiment, something happened. After thirty second
 
 "Pam! Pam!" exclaimed Jim.
 
-"Eaaahaghhh" yawned and grimaced Pamela. All of the hundreds of millions of Pamela's faces changed their expression at the same time.
+"Eaaahaghhh," yawned and grimaced Pamela. All of the hundreds of millions of Pamela's faces changed their expression at the same time.
 
 "Pam! Pam! You're here! I can't believe it... You're finally here! Is this real?"
 
@@ -241,13 +241,13 @@ Pamela's face smiled and a billion of dimples suddenly appeared all around Jim. 
 
 "Wow... I don't know what to say... If my mind is inside the simulation, where is my body? How is my body doing?"
 
-"It's on the hospital bed beside me, and it's fine!.. I mean, it's great and hot as always! You've been on a good diet, I promise"
+"It's on the hospital bed beside me, and it's fine!.. I mean, it's great and hot as always! You've been on a good diet, I promise!"
 
 "Can't I just wake up?"
 
 "I think you're stuck inside your own brain for now... I don't know how long it's going to last, but at least now that we can communicate! Let's try something! Can you focus your energy to create a virtual body, like I have? Just remember what you looked like, and imagine yourself standing next to me!"
 
-"Erm.. Alright"
+"Erm.. Alright."
 
 Pamela closed her eyes, and soon, the millions of faces all merged into one little sphere. It rolled close to Jim, and out of that sphere, materialized the body of Pamela, exactly as she remembered herself, with her hair, her usual skin, the clothes she usually wore at home. To Jim, her body looked ever-so-slightly weird, because everything was inverted from left to right, although he quickly realized why that was the case.
 
@@ -265,7 +265,7 @@ After they were above the clouds, Pamela said, "Jim, trust me!" and suddenly let
 
 "Did you like my bouncy sky castle?" laughed Pamela right after she caught him.
 
-"Very funny" said Jim.
+"Very funny," said Jim.
 
 "Hey mister! If you don't like it, remember I can zap you with a lightning!" laughed Pamela as they settled onto a cloud.
 
@@ -277,13 +277,13 @@ Pamela took Jim's hand, and both of them stood still and couldn't take their eye
 
 "Did you... make this?"
 
-"No"
+"No."
 
 Their voices reverberated and echoed back from the universe in the shape of a beautiful musical piece. Millions of harmonic songs of angels, the orchestra of pure bliss, the ensemble of unconditional love, combined with creativity of all that have ever existed, connected together to play the song for them.
 
-"I love you, Jim"
+"I love you, Jim."
 
-"I love you, Pam"
+"I love you, Pam."
 
 The music covered and lifted them into the iridescent universe, taking them for the most lovely walk of their lives. Galaxies moving past them took shape of a beautiful scenery, where stars were as colorful and intricate as flowers. They moved towards the waterfall made out of stars reflecting the sight around them. As they crossed the waterfall, the colorful stars beyond it took shapes of birds. As uncountable varieties of flocks flew all around them, they heard their tranquil singing and a synchronous dance of their wings amplified by the angelic singing. As they moved forward, stars began to look like weird, unknown and unusual animals, insects and creatures from minuscule elephants to mountain-sized bees. These creatures moved rhythmically, interacted with one another, flew and buzzed. Shapes started taking forms of otherworldly creatures, ancient musical instruments and gorgeous temples. Their sight was lit by rainbows and gradient patterns, and every object had intricate details. They saw thousands of light blue triangles, then thousands of little suns. They saw distortions of colors that looked like their own selves, they saw multi-colored fractals that looked like places they are familiar with, while the music consisted of orchestra instruments and choir, emotionally touching deep to the core. The new and unrepeatable fractal images started flashing very quickly, and the music was obtaining a faster tempo. Neither of them could say a word, they could only quietly observe the beauty of these multi-layered patterns of colors and music. The sight was incredible, through and through.
 

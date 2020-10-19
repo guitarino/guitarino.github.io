@@ -18,6 +18,7 @@ const pages: Pages = {
 	'/blog/book-that-tears-its-own-pages': () => import('./pages/BookThatTearsItsOwnPages'),
 	'/blog/paranoia': () => import('./pages/Paranoia'),
 	'/portfolio': () => import('./pages/Portfolio'),
+	'/portfolio/xmatters': () => import('./pages/PortfolioXMatters'),
 	'/portfolio/collabware': () => import('./pages/PortfolioCollabware'),
 	'/portfolio/netgear': () => import('./pages/PortfolioNetgear'),
 	'/portfolio/capstone': () => import('./pages/PortfolioCapstone'),

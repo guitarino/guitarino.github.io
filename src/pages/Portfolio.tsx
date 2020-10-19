@@ -59,6 +59,27 @@ export default function Portfolio(props: { class?: string }) {
 		<div class="Portfolio__Separator"></div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/xmatters/">UI Developer</Link></span>
+				<span class="Portfolio__JobPlace">xMatters, Inc.</span>
+				<span class="Portfolio__JobDate">Nov 2018 - Nov 2019</span>
+			</div>
+			<div class="Portfolio__Description">
+				<ul>
+					<li>Built front-end for the product's cutting edge features using <strong>React</strong>, <strong>Redux</strong> and <strong>SASS</strong></li>
+					<li>Created dynamic interfaces, including flow designer, lists, content editing and drag &amp; drop</li>
+					<li>Worked with UX team and product leads to establish requirements, and with QA engineers to test</li>
+					<li>Performed task estimation, code reviews, feature demos, and wrote documentation</li>
+					<li>Consistently improved code quality and maintainability of business logic and component structure</li>
+					<li>Was praised by a customer for successfully tackling an intricate bug in legacy <strong>Java</strong> code</li>
+					<li>Helped colleagues with UI development tasks and on-boarding of multiple new team members</li>
+				</ul>
+			</div>
+			<Link href="/portfolio/xmatters/">
+				<div class="Portfolio__SeeMore">See more</div>
+			</Link>
+		</div>
+		<div class="Portfolio__Group">
+			<div class="Portfolio__Title">
 				<span class="Portfolio__JobTitle"><Link href="/portfolio/collabware/">Full Stack Software Engineer</Link></span>
 				<span class="Portfolio__JobPlace">Collabware Inc.</span>
 				<span class="Portfolio__JobDate">May 2017 - Sep 2018</span>

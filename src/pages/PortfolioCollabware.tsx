@@ -46,8 +46,10 @@ export default function PortfolioCollabware(props: { class?: string }) {
 			many crucial features, such as basic and advanced search with interactive search results,
 			customizable columns, sorting and infinite scroll. In addition, I implemented screen-adaptive
 			dashboard component, tree-building interface with keyboard navigation and other interactive
-			components. As part of back-end work, I was responsible for implementing features involving
-			security groups, permissions and content trimming.
+			components. Moreover, I took on an extra responsibility to create a cross-platform desktop
+			downloader application with additional data transformation capabilities. As part of back-end
+			work, I was responsible for implementing features involving security groups, permissions and
+			content trimming.
 		</p>
 		<PortfolioGrid
 			assets={[

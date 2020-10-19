@@ -36,6 +36,11 @@
 		> * {
 			display: inline-block;
 			width: 100%;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
 		}
 
 		a {
@@ -90,11 +95,10 @@
 			text-align: center;
 			background-color: $content-bg-color;
 			position: relative;
-			
-			.Portfolio__JobDate {
-				margin-top: 10px;
-				white-space: nowrap;
-			}
+		}
+
+		&__JobDate {
+			white-space: nowrap;
 		}
 
 		&__Description {
@@ -108,34 +112,6 @@
 		&__SeeMore {
 			margin-left: 80px;
 			overflow: auto;
-		}
-	}
-}
-
-.Portfolio {
-	&__Grid {
-		display: block;
-
-		> div {
-			display: inline-block;
-			width: 50%;
-			padding: 40px;
-			text-align: center;
-
-			@media only screen and (max-width: 600px) {
-				padding: 20px;
-				width: 100%;
-			}
-		}
-
-		video, img {
-			max-width: 100%;
-		}
-	}
-
-	&__Image {
-		&--withBorder {
-			border: 1px solid $theme-color;
 		}
 	}
 }

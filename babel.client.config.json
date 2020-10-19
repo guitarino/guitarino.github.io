@@ -21,7 +21,8 @@
 				"@view": "./src/view",
 				"@utils": "./src/utils",
 				"@styles": "./src/styles",
-				"@content": "./content"
+				"@content": "./content",
+				"@assets": "./assets"
 			}
 		}]
 	]

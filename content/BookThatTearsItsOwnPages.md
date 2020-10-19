@@ -23,7 +23,7 @@ Lilly walked up to me and said in a completely relaxed voice, a voice so relaxed
 > You were a mighty tree that grew in rainy and in sunny.  
 > You were a busy bee obsessed with making sweetest honey.  
 > You were a mountain with a shiny peak.  
-> You were a lily flower growing by a tiny creek.  
+> You were a lily flower by a tiny creek.  
 > You were the one you wanted with your entire heart.  
 > And the one you'd rather keep far away apart.  
 > In all your crimes, your only victim and your own judge.  

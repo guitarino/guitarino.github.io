@@ -157,8 +157,9 @@
 		color: $content-color;
 		background-color: $content-bg-color;
 		padding: $content-vertical-padding $content-horizontal-padding;
-		opacity: 1;
 		transition: opacity $page-content-transition-away-time linear;
+		margin-bottom: 20px;
+		opacity: 1;
 
 		&--loading {
 			opacity: 0;
@@ -176,6 +177,13 @@
 		animation: contentTextLoadingAppear $page-content-transition-away-time linear $page-content-transition-away-time;
 		animation-fill-mode: both;
 		pointer-events: none;
+	}
+
+	blockquote {
+		background: rgba(56, 53, 72, 0.08);
+		margin: 0px;
+		padding: 30px;
+		border-radius: 4px;
 	}
 
 	&__Content {
@@ -232,12 +240,15 @@
 			text-decoration-color: currentColor;
 		}
 
-		> * {
-			> ul,
-			> div,
-			> p {
-				margin-top: 0px;
-				margin-bottom: 20px;
+		> ul, > blockquote > ul,
+		> div, > blockquote > div,
+		> p, > blockquote > p,
+		> blockquote {
+			margin-top: 0px;
+			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0px;
 			}
 		}
 
@@ -254,13 +265,6 @@
 			padding: 0px 4px 0px 4px;
 			border-radius: 2px;
 			word-wrap: break-word;
-		}
-
-		blockquote {
-			background: rgba(56, 53, 72, 0.08);
-			margin: 0px;
-			padding: 30px;
-			border-radius: 4px;
 		}
 	}
 

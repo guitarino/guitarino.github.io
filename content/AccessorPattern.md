@@ -1,6 +1,6 @@
 # You Can Create Private Properties In JS
 
-**Note: this article was written a while ago and has since been archived, because it's no longer relevant. Nowadays, there's more proper ways of creating private properties using the hash symbol, as well as there's possibility of using TypeScript, which has compile time private properties. I'm keeping this article for history sake.**
+**Note: this article was written a while ago and has since been archived, because it's no longer relevant. Nowadays, there's more proper ways of creating private properties using the hash symbol, and there's also a possibility of using TypeScript, which has compile time private properties. I'm keeping this article for history sake.**
 
 It's very [common](https://stackoverflow.com/questions/436120/javascript-accessing-private-member-variables-from-prototype-defined-functions/436147#436147) for JavaScript developers to claim that it's impossible to create truly encapsulated properties and methods on an object **and use them on its prototype**.
 

@@ -9,8 +9,10 @@ function logErrors(err, stats) {
 	if (err) {
 		console.error(err.stack || err);
 		if (err.details) {
+			console.error(err.details);
 			throw err.details;
 		}
+		console.error(err.stack || err);
 		throw err.stack || err;
 	}
 	
@@ -21,6 +23,7 @@ function logErrors(err, stats) {
 	}
 
 	if (stats.hasErrors()) {
+		console.error(info.errors);
 		throw info.errors;
 	}
 }

@@ -38,7 +38,7 @@ Jim was sitting on a couch in the living room and had a laptop in between his le
 
 ## Chapter 2
 
-Everything in that moment felt completely dark. There was no noise other than the buzzing sound coming the fluorescent light bulbs Jim was under. Even though they brightly lit the room, in that moment, darkness, cold and emptiness inhabited Jim's mind, as he sat quietly in that long hallway. The world stopped feeling real.
+Everything in that moment felt completely dark. There was no noise other than the buzzing sound coming the fluorescent light bulbs Jim was under. Even though they brightly lit the room, in that moment, darkness, cold and emptiness pierced through Jim's mind, as he sat quietly in that long hallway. The world stopped feeling real.
 
 He had been switching back and forth from replaying the events of the accident in his head, to feeling completely empty, to noticing the pain from his abrasions, to looking worriedly on the clock on the wall, to looking impatiently at the door. In the moment when everything was dark and empty, the door opened.
 
@@ -56,7 +56,7 @@ After jumping up from the bench he was sitting on, he faced the nurse that came 
 
 "Alright, the dinner's in the fridge."
 
-Jim took off his brown jacket and his winter hat. He now had a bristle, no longer had any piercing, and his hair seemed to have lost any resemblance of structure. As he walked to his room, the noise of a conversation grew louder and louder.
+Jim took off his brown jacket and his winter hat. He now had a bristle, no longer had any piercing, and his hair seemed to have lost any resemblance of structure. As he walked towards his room, the noise of a conversation grew louder and louder.
 
 "Look, Linda, it's hovering to the south!" said a deep voice of a man.
 
@@ -64,9 +64,9 @@ Jim took off his brown jacket and his winter hat. He now had a bristle, no longe
 
 "Could be a good hideout, let's go. I swear this goddamn dragon can smell us!" responded the man.
 
-"Jim, what's been happening in your room all day? I keep hearing voices coming from there, it's been annoying me all day!" said Jim's mom from another room.
+Jim's mother asked from another room, "What's been happening in your room? I keep hearing voices coming from there, and it's been bugging me all day!".
 
-"Not now, mom, I gotta help them"
+"Not now, mom, I gotta help them", replied Jim.
 
 Jim quickly unlocked the door, and a growl of a dragon filled the whole apartment. Jim jumped over the many wires and computer parts lying on the ground and quickly took his virtual reality goggles. His mom impatiently entered his room, and Jim said, "Just don't step on the wires!" as he put his goggles on.
 
@@ -113,7 +113,7 @@ They all caught their breath. Linda and Marcus stood beside the dragon's bloody 
 
 "Jim, that man tells me his career as a bard is over. I'm telling you, Marcus, you will be famous for your poems, not your adventures!" laughed Linda.
 
-"You know, Marcus, if some creature takes out your tongue, I'm gonna miss your songs the most." Jim finished casting his spell and let out a deep breath, "It was a great work, you guys, and we can joke around forever, but, um... I gotta go now. I'll try to find you in a couple of hours", said Jim.
+"You know, Marcus, if a creature takes out your tongue, I'm gonna miss your songs the most." Jim finished casting his spell and let out a deep breath, "It was a great work, you guys, and we can joke around forever, but, um... I gotta go now. I'll try to find you in a couple of hours", said Jim.
 
 In order not to scare his friends by a sudden disappearance, he first chanted an invisibility spell on himself, then quickly exited the game.
 
@@ -131,7 +131,7 @@ In order not to scare his friends by a sudden disappearance, he first chanted an
 
 "Yes, they're my friends. And no... they're not online. I... um... created them. They're kind of... virtual"
 
-"What? How do you mean? How did you make them? What does that mean?"
+"What? How do you mean? How did you make them?"
 
 "See, around 5 months ago, around the time of... you know" sighed Jim
 
@@ -139,7 +139,7 @@ In order not to scare his friends by a sudden disappearance, he first chanted an
 
 "Yeah, at around that time, I realized how to make a sort of a... brain inside a computer... and I hooked it up to the game my company is developing. It's all rather technical, but in simpler words, I kind of made characters, and, well, the whole game... sentient. That's why it looks so realistic, and the characters behave real, do things, talk, joke around."
 
-"How's that possible... they're... in a computer? Why did you help them?"
+"How's that possible? They're in the computer! Why did you help them?"
 
 "They don't know it's a game. To them, it's real life. They feel, and breathe, and love. A developer has to take care of his people, you know, even if they're virtual."
 
@@ -251,7 +251,7 @@ Pamela's face smiled and a billion of dimples suddenly appeared all around Jim. 
 
 Pamela closed her eyes, and soon, the millions of faces all merged into one little sphere. It rolled close to Jim, and out of that sphere, materialized the body of Pamela, exactly as she remembered herself, with her hair, her usual skin, the clothes she usually wore at home. To Jim, her body looked ever-so-slightly weird, because everything was inverted from left to right, although he quickly realized why that was the case.
 
-In an instant, Pamela and Jim were linked up in a hug, and he could feel the touch with his virtual reality gloves. They both burst into tears and, during the remained of his hour, talked about what's happened over the past year.
+In an instant, Pamela and Jim were linked up in a hug, and he could feel the touch with his virtual reality gloves. They both burst into tears and, during the rest of his hour, talked about what's happened over the past year.
 
 ## Chapter 6
 

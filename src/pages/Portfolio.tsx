@@ -59,27 +59,29 @@ export default function Portfolio(props: { class?: string }) {
 		<div class="Portfolio__Separator"></div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
-				<span class="Portfolio__JobTitle">
-					<Link href="https://github.com/guitarino/">Open Source Developer</Link>
-				</span>
-				<span class="Portfolio__JobDate">Dec 2016 - present</span>
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/collabware/">Full Stack Software Engineer</Link></span>
+				<span class="Portfolio__JobPlace">Collabware Inc.</span>
+				<span class="Portfolio__JobDate">May 2017 - Sep 2018</span>
 			</div>
 			<div class="Portfolio__Description">
 				<ul>
-					<li>
-						Technologies used: <strong>Git</strong>, <strong>JavaScript</strong>,{' '}
-						<strong>NodeJS</strong>, <strong>NPM</strong>,{' '}
-						<strong>Browserify</strong>, <strong>UglifyJS</strong>{' '}
-					</li>
-					<li>Created JS libraries for reactive JavaScript, HTML and CSS</li>
-					<li>Created a library for reactive and customizable Web Components</li>
-					<li>Created a detailed documentation for one library</li>
+					<li>Developed an enterprise Single Page Application with <strong>React</strong>, <strong>Redux</strong> and <strong>SASS</strong></li>
+					<li>Created business logic for a cloud-based <strong>C#</strong> and <strong>.NET Web App</strong></li>
+					<li>Developed interactive, screen-size adaptive, reusable and keyboard accessible UI components</li>
+					<li>Contributed to efficient build and development process with <strong>Webpack</strong> and <strong>Babel</strong></li>
+					<li>Developed a multi-process <strong>Electron.js</strong> desktop application with <strong>React</strong>, <strong>Node</strong>, <strong>Webpack</strong> and <strong>SASS</strong></li>
+					<li>Worked with product leads and senior developers for requirement gathering, solutioning and architecture</li>
+					<li>Played a consistent role of a mentor and a dependable team player eager to take on more responsibilities</li>
 				</ul>
 			</div>
+			<Link href="/portfolio/collabware/">
+				<div class="Portfolio__SeeMore">See more</div>
+			</Link>
 		</div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
-				<span class="Portfolio__JobTitle"><Link href="/portfolio/netgear/">NETGEAR Software Developer</Link></span>
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/netgear/">Software Developer</Link></span>
+				<span class="Portfolio__JobPlace">NETGEAR Inc.</span>
 				<span class="Portfolio__JobDate">Sep 2014 - Dec 2016</span>
 			</div>
 			<div class="Portfolio__Description">

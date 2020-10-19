@@ -59,6 +59,24 @@ export default function Portfolio(props: { class?: string }) {
 		<div class="Portfolio__Separator"></div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/securebook/">Secure Book</Link></span>
+				<span class="Portfolio__JobDate">May 2020 - present</span>
+			</div>
+			<div class="Portfolio__Description">
+				<ul>
+					<li>Created a PC, tablet and mobile friendly Web App for private note-taking</li>
+					<li>Used <strong>React</strong>-like library, ProseMirror for content editing, Web Workers and other modern technologies</li>
+					<li>Developed and designed visual components and business logic for the entire Web Application</li>
+					<li>Built dynamic complex components, including auto-complete and <strong>WYSIWYG</strong> content editing</li>
+					<li>Created developer documentation that describes architecture</li>
+				</ul>
+			</div>
+			<Link href="/portfolio/securebook/">
+				<div class="Portfolio__SeeMore">See more</div>
+			</Link>
+		</div>
+		<div class="Portfolio__Group">
+			<div class="Portfolio__Title">
 				<span class="Portfolio__JobTitle"><Link href="/portfolio/xmatters/">UI Developer</Link></span>
 				<span class="Portfolio__JobPlace">xMatters, Inc.</span>
 				<span class="Portfolio__JobDate">Nov 2018 - Nov 2019</span>

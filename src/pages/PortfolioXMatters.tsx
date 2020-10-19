@@ -39,8 +39,7 @@ export default function PortfolioXMatters(props: { class?: string }) {
 			system. My work included fixing bugs and creating web user interfaces for important company's
 			features, such as workflows, libraries, input management and flow designer. This included working
 			with content editing, dynamic flow chart builder, drag &amp; drop and other cross-browser user
-			interactions. Part of responsibility also included maintaining and renewing legacy Java code,
-			for both front-end and back-end.
+			interactions. Part of responsibility also included maintaining and renewing legacy Java code.
 		</p>
 		<PortfolioGrid
 			assets={[

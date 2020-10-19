@@ -24,7 +24,6 @@ module.exports = function getWebpackConfig() {
 			'main': './src/main-server.tsx',
 		},
 		mode: 'production',
-		devtool: 'inline-source-map',
 		output: {
 			path: path.resolve(__dirname, '.build-server'),
 			publicPath: '/',

@@ -172,11 +172,11 @@
 		width: 100%;
 		max-width: $max-content-width;
 		left: 50%;
-		top: 40px;
 		transform: translateX(-50%);
 		animation: contentTextLoadingAppear $page-content-transition-away-time linear $page-content-transition-away-time;
 		animation-fill-mode: both;
 		pointer-events: none;
+		padding: $content-vertical-padding $content-horizontal-padding;
 	}
 
 	blockquote {

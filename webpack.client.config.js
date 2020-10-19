@@ -11,7 +11,6 @@ module.exports = function getWebpackConfig(pluginInfos) {
 			'main': './src/main-client.ts',
 		},
 		mode: 'production',
-		devtool: 'inline-source-map',
 		output: {
 			path: path.resolve(__dirname, '.build-client'),
 			publicPath: '/',

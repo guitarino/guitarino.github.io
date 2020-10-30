@@ -13,7 +13,7 @@ export default function Portfolio(props: { class?: string }) {
 				Profile
 			</div>
 			<div class="Portfolio__Description">
-				Creative and highly experienced Full Stack Web Developer with a diverse programming skill set and
+				Creative and highly experienced Full-Stack Software Engineer with a diverse programming skill set and
 				a strong ability to adapt to new technologies. Passionate about creating stellar user experiences
 				while producing high quality maintainable code. Dependable team player and enthusiastic motivator.
 			</div>
@@ -45,7 +45,7 @@ export default function Portfolio(props: { class?: string }) {
 			</div>
 			<div class="Portfolio__Description">
 				<ul>
-					<li>Cross-browser Full Stack Web Development</li>
+					<li>Cross-browser Full-Stack Software Development</li>
 					<li>Object-oriented programming and best practices</li>
 					<li>CSS3 transitions and animations</li>
 					<li>Creating interactive UI elements</li>
@@ -77,7 +77,7 @@ export default function Portfolio(props: { class?: string }) {
 		</div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
-				<span class="Portfolio__JobTitle"><Link href="/portfolio/xmatters/">UI Developer</Link></span>
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/xmatters/">UI Software Developer</Link></span>
 				<span class="Portfolio__JobPlace">xMatters, Inc.</span>
 				<span class="Portfolio__JobDate">Nov 2018 - Nov 2019</span>
 			</div>
@@ -98,7 +98,7 @@ export default function Portfolio(props: { class?: string }) {
 		</div>
 		<div class="Portfolio__Group">
 			<div class="Portfolio__Title">
-				<span class="Portfolio__JobTitle"><Link href="/portfolio/collabware/">Full Stack Software Engineer</Link></span>
+				<span class="Portfolio__JobTitle"><Link href="/portfolio/collabware/">Full-Stack Software Engineer</Link></span>
 				<span class="Portfolio__JobPlace">Collabware Inc.</span>
 				<span class="Portfolio__JobDate">May 2017 - Sep 2018</span>
 			</div>

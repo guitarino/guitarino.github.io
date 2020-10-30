@@ -18,7 +18,7 @@ export default function Page({ activeMenu, pageComponent, isLoading }: PageProps
 			<div class="Page__HeaderInfoContainer">
 				<div class="Page__HeaderPhoto"></div>
 				<div class="Page__HeaderName">Kirill Shestakov</div>
-				<div class="Page__HeaderDescription">Web Developer in Vancouver</div>
+				<div class="Page__HeaderDescription">Software Engineer in Vancouver</div>
 			</div>
 			<nav class="Page__HeaderMenu">
 				<Link class="Page__MenuLink" href="/">

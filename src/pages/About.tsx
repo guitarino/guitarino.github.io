@@ -10,7 +10,7 @@ export default function About(props: { class?: string }) {
 	return <div class={`About ${props.class || ``}`}>
 		<h1>About me</h1>
 		<p>
-			My name is Kirill and I am a Web Developer living in Vancouver.
+			My name is Kirill and I am a Software Engineer living in Vancouver.
 			I love the <strong>Open Web</strong> and enjoy creating Open Source projects.
 			I actively participate in the developer community by helping others on Stack
 			Overflow and Redditand by writing articles about Web Development.

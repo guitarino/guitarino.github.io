@@ -31,11 +31,11 @@
       "type": "image/png"
     }
   ],
-  "name": "Kirill Shestakov - Full Stack Developer",
+  "name": "Kirill Shestakov - Full-Stack Software Developer",
   "short_name": "Kirill Shestakov",
   "orientation": "natural",
   "display": "standalone",
   "start_url": "/",
-  "description": "Kirill Shestakov - Full Stack Developer - Personal website",
+  "description": "Kirill Shestakov - Full-Stack Software Developer - Personal website",
   "theme_color": "#383548"
 }

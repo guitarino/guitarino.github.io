@@ -26,6 +26,7 @@ export default function Portfolio(props: { class?: string }) {
 				<span class="Portfolio__Point">HTML5</span>
 				<span class="Portfolio__Point">CSS3</span>
 				<span class="Portfolio__Point">JavaScript</span>
+				<span class="Portfolio__Point">TypeScript</span>
 				<span class="Portfolio__Point">React</span>
 				<span class="Portfolio__Point">Redux</span>
 				<span class="Portfolio__Point">Node.js</span>
@@ -64,8 +65,8 @@ export default function Portfolio(props: { class?: string }) {
 			</div>
 			<div class="Portfolio__Description">
 				<ul>
-					<li>Created a PC, tablet and mobile friendly Web App for private note-taking</li>
-					<li>Used <strong>React</strong>-like library, ProseMirror for content editing, Web Workers and other modern technologies</li>
+					<li>Created a responsive Open Source Web App for private note-taking</li>
+					<li>Used <strong>TypeScript</strong>, <strong>React</strong>-like library, ProseMirror for content editing, Web Workers and other modern technologies</li>
 					<li>Developed and designed visual components and business logic for the entire Web Application</li>
 					<li>Built dynamic complex components, including auto-complete and <strong>WYSIWYG</strong> content editing</li>
 					<li>Created developer documentation that describes architecture</li>

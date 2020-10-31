@@ -13,7 +13,7 @@ export default function About(props: { class?: string }) {
 			My name is Kirill and I am a Software Engineer living in Vancouver.
 			I love the <strong>Open Web</strong> and enjoy creating Open Source projects.
 			I actively participate in the developer community by helping others on Stack
-			Overflow and Redditand by writing articles about Web Development.
+			Overflow and Redditand, and sometimes write articles about Web Development.
 			Feel free to check out my <Link href="/blog/">Blog</Link> and <Link href="/portfolio/">Portfolio</Link>.
 			You can find me on:
 		</p>

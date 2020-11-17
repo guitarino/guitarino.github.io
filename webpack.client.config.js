@@ -90,9 +90,9 @@ module.exports = function getWebpackConfig(pluginInfos) {
 			})),
 			new MiniCssExtractPlugin(),
 			new WebpackPwaManifest({
-				"name": "Kirill Shestakov - Full-Stack Software Developer",
+				"name": "Kirill Shestakov - Software Engineer",
 				"short_name": "Kirill Shestakov",
-				"description": "Kirill Shestakov - Full-Stack Software Developer - Personal website",
+				"description": "Kirill Shestakov - Software Engineer - Personal website",
 				"start_url": "/",
 				"theme_color": "#383548",
 				"display": "standalone",

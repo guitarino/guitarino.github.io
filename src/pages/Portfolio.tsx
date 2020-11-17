@@ -13,9 +13,9 @@ export default function Portfolio(props: { class?: string }) {
 				Profile
 			</div>
 			<div class="Portfolio__Description">
-				Creative and highly experienced Full-Stack Software Engineer with a diverse programming skill set and
-				a strong ability to adapt to new technologies. Passionate about creating stellar user experiences
-				while producing high quality maintainable code. Dependable team player and enthusiastic motivator.
+				Creative Software Engineer with 5 years of experience in front-end, full-stack and mobile development.
+				Passionate about learning new technologies, creating stellar user experiences and producing high quality maintainable code.
+				Dependable team player and enthusiastic motivator.
 			</div>
 		</div>
 		<div class="Portfolio__Group">
@@ -46,14 +46,14 @@ export default function Portfolio(props: { class?: string }) {
 			</div>
 			<div class="Portfolio__Description">
 				<ul>
-					<li>Cross-browser Full-Stack Software Development</li>
+					<li>Front-End and Full-Stack Software Development</li>
 					<li>Object-oriented programming and best practices</li>
 					<li>CSS3 transitions and animations</li>
-					<li>Creating interactive UI elements</li>
+					<li>Creating dynamic and interactive UI elements</li>
 					<li>Web Security and vulnerability prevention</li>
 					<li>Browser Rendering Pipeline and Performance Optimization</li>
-					<li>Continuous Integration</li>
 					<li>Mobile app development (Android and Hybrid)</li>
+					<li>Continuous Integration</li>
 				</ul>
 			</div>
 		</div>

@@ -27,13 +27,13 @@ import asset23 from "@assets/portfolio/xmatters/23.png";
 import asset24 from "@assets/portfolio/xmatters/24.png";
 import PortfolioGrid from '@components/PortfolioGrid';
 
-export const title = 'Kirill Shestakov - Portfolio - UI Developer - xMatters, Inc.';
+export const title = 'Kirill Shestakov - Portfolio - UI Software Developer - xMatters, Inc.';
 
 export const menu = 'portfolio';
 
 export default function PortfolioXMatters(props: { class?: string }) {
 	return <div class={`PortfolioXMatters ${props.class || ``}`}>
-		<h1>UI Developer - xMatters, Inc.</h1>
+		<h1>UI Software Developer - xMatters, Inc.</h1>
 		<p>
 			<Link href="https://www.xmatters.com/">xMatters</Link> is a cloud-based IT event management
 			system. My work included fixing bugs and creating web user interfaces for important company's
